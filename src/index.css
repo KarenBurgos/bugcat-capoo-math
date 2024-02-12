@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: fredoka;
+  width: 100%;
+  height: 100%;
+  color: #0F1020;
+  background-color: #ffffff;
+  opacity: 1;
+  background-image:  linear-gradient(#f1f1f1 1.6px, transparent 1.6px), linear-gradient(to right, #f1f1f1 1.6px, #ffffff 1.6px);
+  background-size: 3vw 3vw;
+  height: 100vh;
+}
+
+body.home-page {
+  animation: moveBackground 150s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+*{
+  box-sizing: 0;
+  margin: 0;
+  padding: 0;
+
+}
+
+#root{
+  height: 100%;
+}
+
+/* .rainbow{
+  cursor: pointer;  
+}
+
+.rainbow-5:hover {
+  background-image: linear-gradient(
+    to right, 
+    #FEEB70,
+    #FEEB70 25%,
+    #FD88BE 25%,
+    #FD88BE 50%,
+    #98E6E6 50%,
+    #98E6E6 75%,
+    #9B5ED8 75%,
+    #9B5ED8 100%
+  );
+  animation: slidebg 5s linear infinite;
+} */
+
+
+
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
