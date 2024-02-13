@@ -4,7 +4,7 @@ import React from 'react';
 export default function SoundIcon({ onClick }) {
     return (
         <div onClick={onClick}>
-            <svg className="w-14 h-14 absolute top-0 right-0 md:m-20" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" width="167px" height="167px" viewBox="0 0 194.29 194.29" transform="rotate(180)">
+            <svg className="w-full h-full m-0" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 194.29 194.29" transform="rotate(180)">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier"> <g> <g>

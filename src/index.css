@@ -15,6 +15,11 @@ body {
   height: 100vh;
 }
 
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
 body.home-page {
   animation: moveBackground 150s linear infinite;
 }
