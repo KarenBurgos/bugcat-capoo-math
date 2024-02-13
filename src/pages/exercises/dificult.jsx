@@ -24,7 +24,7 @@ function Difficult() {
   return (
       <div className="md:text-2xl grid md:grid-cols-2 w-full h-[80vh] md: h-full justify-evenly items-center">
         <div className="flex flex-col w-full ">
-          <div >
+          <div>
             <Button
               label="Fácil"
               onClick={() => {

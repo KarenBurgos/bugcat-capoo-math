@@ -8,30 +8,33 @@ function LayoutMain() {
   return (
     <div
       id="title"
-      className="pt-5 h-[100vh] grid-rows-[20%, 80%] md:grid-rows-[30%, 70%]"
+      className=" grid grid-rows-[20vh,80vh] md:grid-rows-[25vh,75vh] items-center "
     >
-      <div>
+      <div className="">
         {location.pathname == "/practica" && <BackButton />}
-        <h1 className="font-bold text-4xl md:text-9xl text-center">
-          <span className="pr-4">
-            <span className="text-yellow">B</span>
-            <span className="text-pink">u</span>
-            <span className="text-blue">g</span>
-            <span className="text-yellow">c</span>
-            <span className="text-purple">a</span>
-            <span className="text-pink">t</span>
+        <h1 className="text-center md:grid">
+          <span className="grid md:flex justify-center">
+            <span className="md:pr-4 font-bold text-5xl md:text-8xl">
+              <span className="text-yellow">B</span>
+              <span className="text-pink">u</span>
+              <span className="text-blue">g</span>
+              <span className="text-yellow">c</span>
+              <span className="text-purple">a</span>
+              <span className="text-pink">t</span>
+            </span>
+            <span className="md:pl-4 font-bold text-5xl md:text-8xl">
+              <span className="text-yellow">C</span>
+              <span className="text-purple">a</span>
+              <span className="text-blue">p</span>
+              <span className="text-pink">o</span>
+              <span className="text-pink">o</span>
+            </span>
           </span>
-          <span className="pl-4">
-            <span className="text-yellow">C</span>
-            <span className="text-purple">a</span>
-            <span className="text-blue">p</span>
-            <span className="text-pink">o</span>
-            <span className="text-pink">o</span>
-          </span>
+
           <SubTitle text={"¡Aprendamos matemáticas!"} />
         </h1>
       </div>
-      <div className="h-[80vh] w-full flex flex-col items-center ">
+      <div className="h-[80vh] w-full flex flex-col items-center md:h-full">
         <Outlet />
       </div>
     </div>
