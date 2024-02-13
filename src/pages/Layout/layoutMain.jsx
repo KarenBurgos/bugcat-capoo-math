@@ -1,11 +1,14 @@
-import { Outlet, useLoaderData } from "react-router-dom"
+import { Outlet, useLoaderData, useLocation } from "react-router-dom"
 import SubTitle from "../../components/SubTitle"
-import { SoundProvider } from "../../components/Sound"
+import BackButton from "../../components/BackButton"
 
 function LayoutMain() {
+    const location = useLocation()
     return (
-        <SoundProvider>
             <div id="title" className="pt-5 h-4/5">
+                { location.pathname == '/practica' &&
+                    <BackButton/>
+                }
                 <h1 className="font-bold text-4xl md:text-9xl text-center">
                     <span className="pr-4">
                         <span className="text-yellow">B</span>
@@ -26,7 +29,6 @@ function LayoutMain() {
                 <SubTitle text={"¡Aprendamos matemáticas!"} />
                 <Outlet />
             </div>
-        </SoundProvider>
     )
 }
 

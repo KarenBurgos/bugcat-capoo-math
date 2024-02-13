@@ -16,40 +16,62 @@ function Button({ label, onClick, isSoundEnabled, operation, color }) {
 
   const onHover = () => {
     setIsHovered(true);
-    if (isEffectSoundEnabled) {
-        hoverAudioRef.current.play();
-      }
   };
+
+  const onEnter = () => {
+    if (isEffectSoundEnabled) {
+      hoverAudioRef.current.play();
+    }
+  }
+
+  const onOut = () => {
+    hoverAudioRef.current.pause();
+    hoverAudioRef.current.currentTime = 0;
+  }
 
   const onLeave = () => {
     setIsHovered(false);
-    hoverAudioRef.current.pause();
-    hoverAudioRef.current.currentTime = 0;
   };
 
   const handleClick = () => {
     if (isEffectSoundEnabled) {
-        clickAudioRef.current.play();
-      }
+      clickAudioRef.current.play();
+    }
     onClick();
   };
 
   useEffect(() => {
     if (isHovered && isEffectSoundEnabled) {
-        hoverAudioRef.current.play();
-      } else {
-        hoverAudioRef.current.pause();
-        hoverAudioRef.current.currentTime = 0;
-      }
-    }, [isHovered, isEffectSoundEnabled]);
+      hoverAudioRef.current.play();
+    } else {
+      hoverAudioRef.current.pause();
+      hoverAudioRef.current.currentTime = 0;
+    }
+  }, [isHovered, isEffectSoundEnabled]);
 
-    const getVisibility = (hoveredLabel) => isHovered ? (label === hoveredLabel ? "block" : "hidden") : "hidden";
+  useEffect(() => {
+    const handleAudioEnd = () => {
+      hoverAudioRef.current.currentTime = 0;
+    };
+
+    hoverAudioRef.current.addEventListener('ended', handleAudioEnd);
+
+    return () => {
+      hoverAudioRef.current.removeEventListener('ended', handleAudioEnd);
+    };
+  }, []);
+
+
+  const getVisibility = (hoveredLabel) => isHovered ? (label === hoveredLabel ? "block" : "hidden") : "hidden";
 
 
   return (
     <>
-      <div className="flex justify-center items-center" onMouseOver={onHover}
-          onMouseLeave={onLeave}>
+      <div className="flex justify-center items-center"
+        onMouseOver={onHover}
+        onMouseLeave={onLeave}
+        onMouseEnter={onEnter}
+        onMouseOut={onOut}>
         <ArrowAdd visibility={getVisibility("Suma")} />
         <ArrowSub visibility={getVisibility("Resta")} />
         <ArrowMult visibility={getVisibility("Multiplicación")} />
@@ -57,7 +79,7 @@ function Button({ label, onClick, isSoundEnabled, operation, color }) {
         <button
           className="relative overflow-hidden w-9/12 md:w-1/2 h-14 md:h-20 px-10 py-2 border border-2 border-customBlack rounded-md group"
           onClick={handleClick}
-          
+
         >
           <span className="relative z-10">{label}</span>
           <span className={`absolute -inset-0 bg-${color} w-0 transition-all duration-300 group-hover:w-full`}></span>

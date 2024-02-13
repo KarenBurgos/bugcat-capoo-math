@@ -20,7 +20,7 @@ export default function LayoutMenuExplanation() {
     }
 
     return (
-        <SoundProvider>
+        <>
             <nav>
                 <div onClick={()=>{navigation("/")}} className="absolute z-10 md:mt-2 mx-8  hover:cursor-pointer">
                     <p>Regresar</p>
@@ -41,6 +41,6 @@ export default function LayoutMenuExplanation() {
 
             <Outlet />
             </div>
-        </SoundProvider>
+        </>
     )
 }

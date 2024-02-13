@@ -13,12 +13,10 @@ function LayoutOperation() {
 
 
     return (
-        <SoundProvider>
-            <div className="pt-5 h-4/5">
-                <Title text={operation} color={OperationsColor(operation)[0]} backButton={true} />
-                <Outlet />
-            </div>
-        </SoundProvider>
+        <div className="pt-5 h-full border border-red-500">
+            <Title text={operation} color={OperationsColor(operation)[0]} backButton={true} />
+            <Outlet />
+        </div>
     )
 }
 

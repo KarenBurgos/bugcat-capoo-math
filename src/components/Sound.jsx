@@ -1,10 +1,10 @@
 import { createContext, useContext, useRef, useEffect, useState } from 'react';
-import SoundIcon from "../Assets/Icons/Sound/Sound"
-import MuteIcon from "../Assets/Icons/Sound/Mute"
-import music from "../Assets/Audio/music.mp3"
-import hoverSound from "../Assets/Audio/hoverSound.mp3";
+import SoundIcon from "../Assets/Icons/Sound/Sound";
+import MuteIcon from "../Assets/Icons/Sound/Mute";
+import music from "../Assets/Audio/music.mp3";
+import MusicIcon from '../Assets/Icons/Sound/MusicIcon';
+import MusicMuteIcon from '../Assets/Icons/Sound/MusicIconMute';
 
-// Creamos un contexto para el control de sonido y efectos de sonido
 const SoundContext = createContext();
 
 export function useSound() {
@@ -12,17 +12,11 @@ export function useSound() {
 }
 
 export function SoundProvider({ children }) {
-  const storedSoundState = localStorage.getItem('isSoundEnabled');
-  const storedEffectSoundState = localStorage.getItem('isEffectSoundEnabled');
-
-  const initialSoundState = storedSoundState ? JSON.parse(storedSoundState) : false;
-  const initialEffectSoundState = storedEffectSoundState ? JSON.parse(storedEffectSoundState) : false;
-
-  const [isSoundEnabled, setIsSoundEnabled] = useState(initialSoundState);
-  const [isEffectSoundEnabled, setIsEffectSoundEnabled] = useState(initialEffectSoundState);
+  const [isSoundEnabled, setIsSoundEnabled] = useState(false);
+  const [isEffectSoundEnabled, setIsEffectSoundEnabled] = useState(false);
 
   const audioRef = useRef(null);
-  const musicAudioRef = useRef(new Audio(music));  // Nueva referencia para la música de fondo
+  const musicAudioRef = useRef(new Audio(music));
 
   useEffect(() => {
     const audioElement = musicAudioRef.current;
@@ -33,14 +27,26 @@ export function SoundProvider({ children }) {
       audioElement.pause();
     }
 
-    // Almacena el estado del sonido en localStorage
-    localStorage.setItem('isSoundEnabled', JSON.stringify(isSoundEnabled));
+    localStorage.setItem("isSoundEnabled", JSON.stringify(isSoundEnabled));
   }, [isSoundEnabled]);
 
   useEffect(() => {
-    // Almacena el estado de los efectos de sonido en localStorage
-    localStorage.setItem('isEffectSoundEnabled', JSON.stringify(isEffectSoundEnabled));
+    localStorage.setItem("isEffectSoundEnabled", JSON.stringify(isEffectSoundEnabled));
   }, [isEffectSoundEnabled]);
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      // Restablecer la configuración al salir de la página
+      localStorage.setItem("isSoundEnabled", JSON.stringify(false));
+      localStorage.setItem("isEffectSoundEnabled", JSON.stringify(false));
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
 
   const toggleSound = () => {
     setIsSoundEnabled(!isSoundEnabled);
@@ -51,19 +57,23 @@ export function SoundProvider({ children }) {
   };
 
   return (
-    <SoundContext.Provider value={{ isSoundEnabled, isEffectSoundEnabled, toggleSound, toggleEffectSound }}>
-      <div className="absolute z-10 top-0 right-0 cursor-pointer">
-        {isSoundEnabled ? (
-          <SoundIcon onClick={toggleSound} />
-        ) : (
-          <MuteIcon onClick={toggleSound} />
-        )}
-        <button onClick={toggleEffectSound}>
-          {isEffectSoundEnabled ? 'Desactivar Efectos' : 'Activar Efectos'}
-        </button>
-        {/* Esta referencia adicional puede ser útil para otros efectos de sonido */}
+    <SoundContext.Provider
+      value={{ isSoundEnabled, isEffectSoundEnabled, toggleSound, toggleEffectSound }}
+    >
+      <div className="absolute flex flex-col w-36 justify-around items-center m-16 h-14 z-10 top-0 right-0 cursor-pointer">
+        <div className="interaction-element w-full flex justify-end">
+          <p className='pb-5'>Haz clic aquí para activar el sonido</p>
+        </div>
+        <div className='flex'>
+          <div className="w-1/2 pr-2">
+            {isSoundEnabled ? (<SoundIcon onClick={toggleSound} />) : (<MuteIcon onClick={toggleSound} />)}
+          </div>
+          <div className="w-1/2 pl-2">
+            {isEffectSoundEnabled ? (<MusicIcon onClick={toggleEffectSound} />) : (<MusicMuteIcon onClick={toggleEffectSound} />)}
+          </div>
+        </div>
         <audio ref={audioRef} loop>
-          <source src={musicAudioRef} type="audio/mp3" />
+          <source src={music} type="audio/mp3" />
         </audio>
       </div>
       {children}

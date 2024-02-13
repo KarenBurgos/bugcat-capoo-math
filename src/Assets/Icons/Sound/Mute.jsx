@@ -1,8 +1,8 @@
 export default function MuteIcon({ onClick }) {
     return (
         <div onClick={onClick}>
-            <svg className="w-14 h-14 absolute top-0 right-0 md:m-20" transform="rotate(180)" version="1.0" xmlns="http://www.w3.org/2000/svg"
-                width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+            <svg className="w-full h-full" transform="rotate(180)" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512.000000 512.000000"
                 preserveAspectRatio="xMidYMid meet">
 
                 <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"

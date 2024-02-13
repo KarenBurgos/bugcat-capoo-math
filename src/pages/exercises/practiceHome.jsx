@@ -3,7 +3,6 @@ import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import BackgroundLines from "../../components/BackgroundLines";
-import BackButton from "../../components/BackButton";
 
 function ExercisesMain() {
     const navigate = useNavigate();
@@ -16,7 +15,7 @@ function ExercisesMain() {
 
     return (
         <div className="h-full m-0">
-            <BackButton />
+
             <div id='menu' className="md:text-2xl grid md:grid-cols-2 w-full h-full">
                 <div className="flex flex-col justify-evenly">
                     <Button label="Suma" onClick={() => onHandlerClick("Suma")} color={"yellow"}/>
