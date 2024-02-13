@@ -13,14 +13,14 @@ function LayoutOperation() {
     const operation = useLoaderData()
 
     return (
-            <div className="grid grid-rows-[30vh,70vh]">
+            <div className="grid grid-rows-[20vh,80vh] md:grid-rows-[30vh,70vh]">
                 <div>
                     <Title text={operation} color={OperationsColor(operation)[0]} backButton={true} >
                     <SubTitle text={"Escoje la dificultad"} />
                         </Title>
 
                 </div>
-                <div className="h-full w-full flex flex-col items-center justify-center ">
+                <div className="h-[80vh] w-full flex flex-col items-center md:h-full">
                     <Outlet />    
                 </div>
                 

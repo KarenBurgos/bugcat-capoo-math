@@ -27,7 +27,7 @@ function Main() {
 
 
     return (
-        <div className="relative h-full m-0 flex flex-col items-center justify-around pt-32">
+        <div className="relative m-0 flex flex-col items-center justify-around pt-32">
             <div className="flex flex-col w-1/4 justify-evenly items-center relative">
                 <img src={HomeImg} alt="home gif" className="w-10/12 md:w-1/2" />
                 <BackgroundLines full={true} />

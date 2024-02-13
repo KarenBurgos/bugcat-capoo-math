@@ -55,11 +55,11 @@ function Button({ label, onClick, isSoundEnabled, operation, color }) {
         <ArrowMult visibility={getVisibility("Multiplicación")} />
         <ArrowDiv visibility={getVisibility("División")} />
         <button
-          className="relative overflow-hidden w-9/12 md:w-1/2 h-14 md:h-20 px-10 py-2 border border-2 border-customBlack rounded-md group"
+          className="relative overflow-hidden w-full md:w-1/2 h-20 px-10 py-2 border border-2 border-customBlack rounded-md group"
           onClick={handleClick}
           
         >
-          <span className="relative z-10">{label}</span>
+          <span className="relative z-10 text-[1.2rem] md:text-xl">{label}</span>
           <span className={`absolute -inset-0 bg-${color} w-0 transition-all duration-300 group-hover:w-full`}></span>
         </button>
       </div>

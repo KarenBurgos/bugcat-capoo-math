@@ -22,9 +22,8 @@ function Difficult() {
   }
 
   return (
-    <div className="w-full ">
-      <div className="md:text-2xl flex w-full">
-        <div className="flex flex-col w-full justify-between">
+      <div className="md:text-2xl grid md:grid-cols-2 w-full h-[80vh] md: h-full justify-evenly items-center">
+        <div className="flex flex-col w-full ">
           <div >
             <Button
               label="Fácil"
@@ -34,7 +33,7 @@ function Difficult() {
               color={OperationsColor(operation)[1]}
             />
           </div>
-          <div className="py-[5%]">
+          <div className="py-[10%] md:py-[5%]">
             <Button
               label="Intermedio"
               onClick={() => {
@@ -55,7 +54,7 @@ function Difficult() {
         </div>
         <div className="flex flex-col w-full justify-evenly items-center relative">
           <img
-            className="w-10/12 md:w-1/3 "
+            className="w-3/4 md:w-1/3 "
             src={difficultImg}
             alt="imagen de bienvenida"
           />
@@ -63,7 +62,6 @@ function Difficult() {
           <BackgroundLines />
         </div>
       </div>
-    </div>
   );
 }
 
