@@ -23,6 +23,7 @@ export default function AddExercise({ operation, difficult }) {
       setAnswerStatus(true);
     } else {
       setAnswerStatus(false);
+      setAnswer("");
     }
   };
 
@@ -84,7 +85,7 @@ export default function AddExercise({ operation, difficult }) {
       </div>
       <div className="flex items-center justify-center h-full w-full">
         <div className="flex flex-col w-8/12 justify-evenly items-center relative">
-          <RandomImage answer={answerStatus} />
+        {useMemo(() => <RandomImage answer={answerStatus} />, [answerStatus])}
           <svg
             className={`opacity-50 w-1/2 md:w-[90%] absolute top-50 left-50 -z-10`}
             xmlns="http://www.w3.org/2000/svg"
