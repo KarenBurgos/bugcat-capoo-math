@@ -97,7 +97,7 @@ export default function DivExercise({ operation, difficult }) {
               </button>
             </form>
           </div>
-          <div className="text-4xl flex justify-center items-center">
+          <div className="text-4xl flex flex-col justify-center items-center">
             {quotientStatus == true ? (
               <h1>¡El cociente es correcto!</h1>
             ) : (

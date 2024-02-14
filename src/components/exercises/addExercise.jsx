@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import numberGenerator from "../../utils/mathUtils/MathUtils";
 import OperationsSimbol from "../../Assets/OperationSimbol";
 import OperationsColor from "../../Assets/OperationsColor";
@@ -26,25 +26,23 @@ export default function AddExercise({ operation, difficult }) {
     }
   };
 
-  const handleButtonClick = () => {
-    if (answerStatus === true) {
-      setNumbers(numberGenerator({ operation, difficult }));
-      setAnswer("");
-      setAnswerStatus("");
-    }
+  const handleNextButtonClick = () => {
+    setNumbers(numberGenerator({ operation, difficult }));
+    setAnswer("");
+    setAnswerStatus("");
   };
 
   return (
     <div className="grid md:grid-cols-[60%,40%] w-full justify-center items-center h-full md:pb-10">
       <div className="">
         <div className="pb-10">
-          <div className="flex justify-center w-full text-5xl">
+          <div className="flex justify-center w-full text-5xl py-10 pb-14 md:p-0">
             <h1 className="px-1">{numbers[0]}</h1>
             <h1 className="px-1">{OperationsSimbol(operation)}</h1>
             <h1 className="px-1">{numbers[1]}</h1>
           </div>
-          <div className="flex justify-center h-full w-full pb-5">
-            <form onSubmit={onSubmit}>
+          <div className="flex justify-center h-full w-full md:pb-5">
+            <form onSubmit={onSubmit} className="flex flex-col md:flex-row">
               <input
                 value={answer}
                 onChange={handleInputChange}
@@ -53,26 +51,34 @@ export default function AddExercise({ operation, difficult }) {
                 disabled={answerStatus}
                 className="px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md"
               />
+              {answerStatus === "" || answerStatus === false ? (
+                <button
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(
+                    operation
+                  )} bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
+                  type="submit"
+                >
+                  Revisar respuesta
+                </button>
+              ) : null}
 
-              <button
-                className={`px-10 py-2 md:my-5 border border-2 border-${OperationsColor(
-                  operation
-                )}  bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
-                type="submit"
-                onClick={handleButtonClick}
-              >
-                {answerStatus === true
-                  ? "Siguiente ejercicio"
-                  : "Revisar respuesta"}
-              </button>
+              {answerStatus === true ? (
+                <button
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(
+                    operation
+                  )} bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
+                  type="button"
+                  onClick={handleNextButtonClick}
+                >
+                  Siguiente ejercicio
+                </button>
+              ) : null}
             </form>
           </div>
           <div className="text-4xl flex justify-center items-center">
-            {answerStatus === true ? (
-              <h1>¡Correcto!</h1>
-            ) : (
-              answerStatus === false && <h2>¡Incorrecto!</h2>
-            )}
+            {answerStatus === true && <h1>¡Correcto!</h1>}
+            {answerStatus === false && <h2>¡Incorrecto!</h2>}
+            {answerStatus === "" && <h2></h2>}
           </div>
         </div>
       </div>

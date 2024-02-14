@@ -34,13 +34,12 @@ const RandomImage = ({ answer }) => {
   
     if (answer === true) {
       imageToShow = getRandomImage(trueImages);
+    } else if (answer === ''){
+      imageToShow = defaultImage;
     } else if (answer === false) {
       imageToShow = getRandomImage(falseImages);
-    } else {
-      imageToShow = defaultImage;
     }
-    console.log(trueImages)
-    console.log(defaultImg)
+    console.log(answer)
   
     return <img src={imageToShow} alt="Random Image" className="w-10/12 md:w-[80%]" />;
   };

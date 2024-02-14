@@ -14,7 +14,7 @@ function LayoutOperation() {
   const location = useLocation();
 
   return (
-    <div className="grid grid-rows-[20vh,80vh] md:grid-rows-[25vh,75vh] items-center">
+    <div className="grid grid-rows-[20vh,80vh] md:grid-rows-[25vh,75vh] md:items-center">
       <div>
         <Title
           text={operation}
