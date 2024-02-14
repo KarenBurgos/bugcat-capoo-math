@@ -28,12 +28,10 @@ export default function AddExercise({ operation, difficult }) {
 
   const handleButtonClick = () => {
     if (answerStatus === true) {
-      // Generar un nuevo ejercicio si la respuesta es correcta
       setNumbers(numberGenerator({ operation, difficult }));
       setAnswer("");
       setAnswerStatus("");
     }
-    // No hacer nada si la respuesta es incorrecta
   };
 
   return (
