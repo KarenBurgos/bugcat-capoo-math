@@ -53,7 +53,7 @@ function Main() {
                     
 
                 </div>
-                <div className="relative flex flex-col items-center relative hover:cursor-default pt-20 w-full"
+                <div className="relative flex flex-col items-center hover:cursor-default pt-20 w-full"
                     onMouseOver={() => { setIsHoveredPractice(true) }}
                     onMouseLeave={() => { setIsHoveredPractice(false) }}
                 >
