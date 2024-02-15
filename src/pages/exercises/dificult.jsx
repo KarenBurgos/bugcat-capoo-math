@@ -27,27 +27,21 @@ function Difficult() {
           <div>
             <Button
               label="Fácil"
-              onClick={() => {
-                onHandlerClick("Fácil");
-              }}
+              onClick={() => {onHandlerClick("Fácil");}}
               color={OperationsColor(operation)[1]}
             />
           </div>
           <div className="py-[10%] md:py-[5%]">
             <Button
               label="Intermedio"
-              onClick={() => {
-                onHandlerClick("Intermedio");
-              }}
+              onClick={() => {onHandlerClick("Intermedio");}}
               color={OperationsColor(operation)[2]}
             />
           </div>
           <div >
             <Button
               label="Dificil"
-              onClick={() => {
-                onHandlerClick("Difícil");
-              }}
+              onClick={() => {onHandlerClick("Difícil");}}
               color={OperationsColor(operation)[3]}
             />
           </div>
@@ -58,7 +52,6 @@ function Difficult() {
             src={difficultImg}
             alt="imagen de bienvenida"
           />
-
           <BackgroundLines />
         </div>
       </div>

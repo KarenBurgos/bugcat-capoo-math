@@ -82,9 +82,7 @@ export default function DivExercise({ operation, difficult }) {
 
               {quotientStatus === "" || quotientStatus === false || remainderStatus === false ? (
                 <button
-                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(
-                    operation
-                  )} bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(operation)[0]} bg-${OperationsColor(operation)[0]} bg-opacity-60 rounded-md`}
                   type="submit"
                 >
                   Revisar respuesta
@@ -93,9 +91,7 @@ export default function DivExercise({ operation, difficult }) {
 
               {quotientStatus === true && remainderStatus === true? (
                 <button
-                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(
-                    operation
-                  )} bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-green-400 bg-green-400 bg-opacity-60 rounded-md`}
                   type="button"
                   onClick={handleNextButtonClick}
                 >
