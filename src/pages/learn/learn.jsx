@@ -24,9 +24,15 @@ function Learn() {
     switch (operation) {
       case "Suma":
         return (
-          <div class="h-full grid grid-rows-[90%,10%]">
-            <LearnAddition page={page} />
-            <PaginationAddition page={page}/>
+          <div class="h-full w-full grid grid-rows-[80%,20%] justify-between ">
+            <div className="overflow-hidden overflow-y-auto ">
+            {/*  */}
+              
+                <LearnAddition page={page} />
+            </div>
+              <div className="flex justify-center items-center w-full">
+                <PaginationAddition page={page}/>
+              </div>
           </div>
         );
       case "Resta":
@@ -56,10 +62,9 @@ function Learn() {
   };
 
   return (
-    <>
+    <div className="h-full w-full">
       <OperationComponent/>
-      
-    </>
+    </div>
   );
 }
 

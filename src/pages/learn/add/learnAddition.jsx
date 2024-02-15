@@ -6,7 +6,7 @@ import Step4 from "../../../components/explanation/Addition/step4";
 
 export default function LearnAddition({ page }) {
     return (
-    <div className="overflow-y-auto">
+    <div >
         {page === "Explicacion" && <Explication />}
         {page === "1" && <Step1 />}
         {page === "2" && <Step2 />}
