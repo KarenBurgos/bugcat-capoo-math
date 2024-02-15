@@ -16,7 +16,6 @@ function Exercise() {
   const operation = params.operation;
   const difficult = params.difficult;
 
-  // Determina qué componente de ejercicio mostrar según el tipo de operación
   const ExerciseComponent = () => {
     switch (params.operation) {
       case "Suma":

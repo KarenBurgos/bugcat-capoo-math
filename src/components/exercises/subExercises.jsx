@@ -9,7 +9,7 @@ export default function SubExercise({ operation, difficult }) {
     numberGenerator({ operation, difficult })
   );
   const [answer, setAnswer] = useState("");
-  const [answerStatus, setAnswerStatus] = useState();
+  const [answerStatus, setAnswerStatus] = useState("");
 
   function handleInputChange(e) {
     setAnswer(e.target.value);
@@ -23,15 +23,14 @@ export default function SubExercise({ operation, difficult }) {
       setAnswerStatus(true);
     } else {
       setAnswerStatus(false);
+      setAnswer("");
     }
   };
 
-  const handleButtonClick = () => {
-    if (answerStatus === true) {
-      setNumbers(numberGenerator({ operation, difficult }));
-      setAnswer("");
-      setAnswerStatus("");
-    }
+  const handleNextButtonClick = () => {
+    setNumbers(numberGenerator({ operation, difficult }));
+    setAnswer("");
+    setAnswerStatus("");
   };
 
   return (
@@ -53,31 +52,40 @@ export default function SubExercise({ operation, difficult }) {
                 disabled={answerStatus}
                 className="px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md"
               />
-              <button
-                className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(
-                  operation
-                )}  bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
-                type="submit"
-                onClick={handleButtonClick}
-              >
-                {answerStatus === true
-                  ? "Siguiente ejercicio"
-                  : "Revisar respuesta"}
-              </button>
+               {answerStatus === "" || answerStatus === false ? (
+                <button
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(
+                    operation
+                  )} bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
+                  type="submit"
+                >
+                  Revisar respuesta
+                </button>
+              ) : null}
+
+              {answerStatus === true ? (
+                <button
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(
+                    operation
+                  )} bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
+                  type="button"
+                  onClick={handleNextButtonClick}
+                >
+                  Siguiente ejercicio
+                </button>
+              ) : null}
             </form>
           </div>
           <div className="text-4xl flex justify-center items-center">
-            {answerStatus === true ? (
-              <h1>¡Correcto!</h1>
-            ) : (
-              answerStatus === false && <h2>¡Incorrecto!</h2>
-            )}
+            {answerStatus === true && <h1>¡Correcto!</h1>}
+            {answerStatus === false && <h2>¡Incorrecto!</h2>}
+            {answerStatus === "" && <h2></h2>}
           </div>
         </div>
       </div>
       <div className="flex items-center justify-center h-full w-full">
         <div className="flex flex-col w-8/12 justify-evenly items-center relative">
-          <RandomImage answer={answerStatus} />
+        {useMemo(() => <RandomImage answer={answerStatus} />, [answerStatus])}
           <svg
             className={`opacity-50 w-1/2 md:w-[90%] absolute top-50 left-50 -z-10`}
             xmlns="http://www.w3.org/2000/svg"

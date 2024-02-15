@@ -9,9 +9,9 @@ export default function DivExercise({ operation, difficult }) {
     numberGenerator({ operation, difficult })
   );
   const [quotient, setQuotient] = useState("");
-  const [quotientStatus, setQuotientStatus] = useState();
+  const [quotientStatus, setQuotientStatus] = useState("");
   const [remainder, setRemainder] = useState("");
-  const [remainderStatus, setRemainderStatus] = useState();
+  const [remainderStatus, setRemainderStatus] = useState("");
 
   function handleQuotientChange(e) {
     setQuotient(e.target.value);
@@ -23,57 +23,53 @@ export default function DivExercise({ operation, difficult }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(quotient);
-    console.log(remainder);
     const resultQuotient = Math.floor(numbers[0] / numbers[1]);
     const remainderResult = numbers[0] % numbers[1];
-    console.log(resultQuotient);
-    console.log(remainderResult);
 
     if (quotient === resultQuotient.toString()) {
       setQuotientStatus(true);
-      console.log("1");
     } else {
       setQuotientStatus(false);
+      setQuotient("");
     }
 
     if (remainder === remainderResult.toString()) {
       setRemainderStatus(true);
-      console.log("1");
     } else {
       setRemainderStatus(false);
-      console.log("1");
+      setRemainder("");
     }
   };
 
-  const handleButtonClick = () => {
-    if (quotientStatus === true && remainderStatus === true) {
-      setNumbers(numberGenerator({ operation, difficult }));
-      setQuotient("");
-      setQuotientStatus("");
-      setRemainder("");
-      setRemainderStatus("");
-    }
+  const handleNextButtonClick = () => {
+    setNumbers(numberGenerator({ operation, difficult }));
+    setQuotient("");
+    setQuotientStatus("");
+    setRemainder("");
+    setRemainderStatus("");
   };
+  console.log(remainderStatus)
+  
+  console.log(quotientStatus)
 
   return (
     <div className="grid md:grid-cols-[60%,40%] w-full justify-center items-center h-full md:pb-10">
       <div className="">
         <div className="pb-10">
-          <div className="flex justify-center w-full text-5xl">
+          <div className="flex justify-center w-full text-5xl py-5 md:p-0">
             <h1 className="px-1">{numbers[0]}</h1>
             <h1 className="px-1">{OperationsSimbol(operation)}</h1>
             <h1 className="px-1">{numbers[1]}</h1>
           </div>
-          <div className="flex justify-center">
-            <form onSubmit={onSubmit}>
+          <div className="flex justify-center h-full w-full md:pb-5">
+            <form onSubmit={onSubmit}  className="flex flex-col md:flex-row">
               <input
                 value={quotient}
                 onChange={handleQuotientChange}
                 type="number"
                 placeholder="Ingresar el cociente"
                 disabled={quotientStatus}
-                className="px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md"
+                className="px-10 py-2 mb-6 md:my-5 border border-2 border-customBlack rounded-md"
               />
               <input
                 value={remainder}
@@ -84,36 +80,42 @@ export default function DivExercise({ operation, difficult }) {
                 className="px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md"
               />
 
-              <button
-                className={`px-10 py-2 md:my-5 border border-2 border-${OperationsColor(
-                  operation
-                )}  bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
-                type="submit"
-                onClick={handleButtonClick}
-              >
-                {quotientStatus === true && remainderStatus === true
-                  ? "Siguiente ejercicio"
-                  : "Revisar respuesta"}
-              </button>
+              {quotientStatus === "" || quotientStatus === false || remainderStatus === false ? (
+                <button
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(
+                    operation
+                  )} bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
+                  type="submit"
+                >
+                  Revisar respuesta
+                </button>
+              ) : null}
+
+              {quotientStatus === true && remainderStatus === true? (
+                <button
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(
+                    operation
+                  )} bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
+                  type="button"
+                  onClick={handleNextButtonClick}
+                >
+                  Siguiente ejercicio
+                </button>
+              ) : null}
             </form>
           </div>
-          <div className="text-4xl flex flex-col justify-center items-center">
-            {quotientStatus == true ? (
-              <h1>¡El cociente es correcto!</h1>
-            ) : (
-              !quotientStatus == false && <h2>El cociente es incorrecto!</h2>
-            )}
-            {remainderStatus == true ? (
-              <h1>¡El residuo es correcto!</h1>
-            ) : (
-              !quotientStatus == false && <h2>El residuo es incorrecto!</h2>
-            )}
+          <div className="text-xl md:text-4xl flex flex-col justify-center items-center mb-5 md:m-0">
+            {quotientStatus === true && <h1>¡El cociente es correcto!</h1>}
+            {quotientStatus === false && <h1>El cociente es incorrecto</h1>}
+            {remainderStatus === true && <h1>¡El residuo es correcto!</h1>}
+            {remainderStatus === false && <h1>El residuo es incorrecto!</h1>}
+            {remainderStatus === "" && quotientStatus == "" && <h1></h1>}
           </div>
         </div>
       </div>
       <div className="flex items-center justify-center h-full w-full">
         <div className="flex flex-col w-8/12 justify-evenly items-center relative">
-          <RandomImage answer={quotientStatus && remainderStatus} />
+        {useMemo(() => <RandomImage answer={quotientStatus && remainderStatus} />, [quotientStatus, remainderStatus])}
           <svg
             className={`opacity-50 w-1/2 md:w-[90%] absolute top-50 left-50 -z-10`}
             xmlns="http://www.w3.org/2000/svg"
