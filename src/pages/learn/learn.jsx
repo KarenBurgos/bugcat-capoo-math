@@ -24,10 +24,8 @@ function Learn() {
     switch (operation) {
       case "Suma":
         return (
-          <div class="h-full w-full grid grid-rows-[80%,20%] justify-between ">
-            <div className="overflow-hidden overflow-y-auto ">
-            {/*  */}
-              
+          <div class="h-full w-full grid grid-rows-[80%,20%] justify-between">
+            <div className="overflow-hidden overflow-y-auto">
                 <LearnAddition page={page} />
             </div>
               <div className="flex justify-center items-center w-full">
@@ -37,23 +35,35 @@ function Learn() {
         );
       case "Resta":
         return (
-          <div class="h-full grid grid-rows-[90%,10%]">
-            <LearnSubtraction page={page} />
-            <PaginationSubtraction page={page}/>
+          <div class="h-full w-full grid grid-rows-[80%,20%] justify-between">
+            <div className="overflow-hidden overflow-y-auto">
+              <LearnSubtraction page={page} />
+            </div>
+            <div className="flex justify-center items-center w-full">
+              <PaginationSubtraction page={page}/>
+            </div>
           </div>
         );
       case "Multiplicacion":
         return (
-          <div class="h-full grid grid-rows-[90%,10%]">
-            <LearnMultiplication page={page} />
-            <PaginationMultiplication page={page}/>
+          <div class="h-full w-full grid grid-rows-[80%,20%] justify-between">
+            <div className="overflow-hidden overflow-y-auto">
+              <LearnMultiplication page={page} />
+            </div>
+            <div className="flex justify-center items-center w-full">
+              <PaginationMultiplication page={page}/>
+            </div>
           </div>
         );
       case "Division":
         return (
-          <div class="h-full grid grid-rows-[90%,10%]">
-            <LearnDivision page={page} />
-            <PaginationDivision page={page}/>
+          <div class="h-full w-full grid grid-rows-[80%,20%] justify-between">
+            <div className="overflow-hidden overflow-y-auto">
+              <LearnDivision page={page} />
+            </div>
+            <div className="flex justify-center items-center w-full">
+              <PaginationDivision page={page}/>
+            </div>
           </div>
         );
       default:
