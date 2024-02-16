@@ -20,15 +20,8 @@ function Learn() {
   const operation = params.operation
   const navigate = useNavigate  ()
   const page= params.page
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState("Explicacion");
 
-  const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
-    // Realizar la navegación aquí (si es necesario)
-    const newPath = `/aprender/${operation}/${newPage}`;
-    // Utiliza tu método de navegación específico
-    navigate(newPath);
-  };
 
   const OperationComponent = () => {
     switch (operation) {

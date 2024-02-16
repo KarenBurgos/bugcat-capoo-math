@@ -5,8 +5,12 @@ import ReactPaginate from "react-paginate";
 export default function Pagination({ currentPage, setCurrentPage }) {
     const location = useLocation();
     const navigate = useNavigate();
-  
+
+    console.log(currentPage)
     const onClickNext = () => {
+      if(currentPage === "Explicacion"){
+        setCurrentPage(1)
+      }
       if (currentPage < 4) {
         setCurrentPage(currentPage + 1);
         navigate(`/aprender/Suma/${currentPage + 1}`);
@@ -14,6 +18,9 @@ export default function Pagination({ currentPage, setCurrentPage }) {
     };
   
     const onClickPrevious = () => {
+      if(currentPage === 1){
+        setCurrentPage("Explicacion")
+      }
       if (currentPage > 1) {
         setCurrentPage(currentPage - 1);
         navigate(`/aprender/Suma/${currentPage - 1}`);
