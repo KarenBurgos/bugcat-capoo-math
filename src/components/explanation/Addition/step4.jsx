@@ -4,10 +4,10 @@ import BackgroundLines from "../../BackgroundLines"
 //suma
 export default function Step4() {
     return (
-        <div className="flex flex-col justify-center items-center w-screen h-full border border-4 boder-pink">
+        <div className="flex flex-col justify-center items-center w-screen h-full">
             <p className="text-3xl">¡Completado!</p>
-            <div className="flex h-1/2 relative ">
-                <img className="h-1/2" src={CompletedImg} />
+            <div className="flex relative ">
+                <img className="h-[50vh]" src={CompletedImg} />
                 <BackgroundLines full={true} />
             </div>
         </div>

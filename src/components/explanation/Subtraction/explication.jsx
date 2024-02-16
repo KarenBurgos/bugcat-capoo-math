@@ -8,29 +8,29 @@ import explanation3 from "../../../Assets/img/restaExplicación3.png"
 //suma
 export default function Explication() {
     return (
-        <div className="md:py-10 md:px-20 flex items-start">
+        <div className="md:py-10 md:px-20 flex justify-center items-start w-screen">
             <StepNumber color="#FD88BE" />
 
-            <div className="grid grid-cols-2 w-full">
+            <div className="grid grid-cols-[70%,30%] w-full">
                 <div>
                     <p className="py-4 font-bold text-2xl">Restar significa quitar o disminuir</p>
-                    <div className="flex items-center">
-                        <p className="py-4 pr-2">Si tenemos 3 sandias </p>
-                        <img className="h-1/3 w-1/3" src={explanation1} />
-                        <p className="py-4 pl-2">y nos comemos 2 </p>
-                        <img className="h-1/3 w-1/3" src={explanation2} />
+                    <div className="flex items-end">
+                        <p className="pb-2">Si tenemos 3 sandias </p>
+                        <img className="h-1/2 w-1/2" src={explanation1} />
+                    </div>
+                    <div className="flex items-end">
+                        <p className="pb-2">y nos comemos 2 </p>
+                        <img className="h-1/2 w-1/2" src={explanation2} />
                     </div>
                     <div className="flex items-center pt-10">
                         <p>No quedara solo una sandia </p>
                         <img className="h-20 w-16" src={explanation3} />
                     </div>
                 </div>
-                <div className="flex w-full items-center text-2xl">
+                <div className="flex w-full items-center justify-center text-2xl">
                     <ArrowAdd true/>
-                    <div className="p-20 flex w-1/3">
-                        3 - 2
-                    </div>
-                    <div className="flex w-full">
+
+                    <div className="flex justify-center w-full">
                         <table className="border border-gray-300 border-dashed">
                             <tbody>
                                 <tr>

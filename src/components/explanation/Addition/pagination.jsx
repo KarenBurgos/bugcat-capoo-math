@@ -1,10 +1,28 @@
-import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
-export default function Pagination({page}){
-    const location = useLocation()
-    console.log(location.pathname)
-    return(
-        <div className="flex justify-center items-end ">
+export default function Pagination({ currentPage, setCurrentPage }) {
+    const location = useLocation();
+    const navigate = useNavigate();
+  
+    const onClickNext = () => {
+      if (currentPage < 4) {
+        setCurrentPage(currentPage + 1);
+        navigate(`/aprender/Suma/${currentPage + 1}`);
+      }
+    };
+  
+    const onClickPrevious = () => {
+      if (currentPage > 1) {
+        setCurrentPage(currentPage - 1);
+        navigate(`/aprender/Suma/${currentPage - 1}`);
+      }
+    };
+  
+    return (
+      <div className="flex justify-center items-end">
+         <div className="flex justify-center items-end ">
             <Link to="/aprender/Suma/Explicacion" className={`mx-5 px-5 py-2 ${location.pathname == '/aprender/Suma/Explicacion' ?  'bg-yellow' : 'bg-gray-300'}`}>
                 Explicación
             </Link>
@@ -24,5 +42,11 @@ export default function Pagination({page}){
                 Ejercicios
             </Link>
         </div>
-    )
-}
+        <div>
+          <button onClick={onClickPrevious}>previus</button>
+          <p className="px-5">{currentPage}</p>
+          <button onClick={onClickNext}>next</button>
+        </div>
+      </div>
+    );
+  }

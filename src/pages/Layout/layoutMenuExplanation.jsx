@@ -20,8 +20,8 @@ export default function LayoutMenuExplanation() {
     }
 
     return (
-        <div className="h-screen">
-            <div className="h-full grid grid-rows-[30vh,70vh]">
+        <div className="h-screen w-screen">
+            <div className="h-full grid grid-rows-[30vh,70vh] grid-cols-1 justify-center">
                 <div className="">
                     <nav>
                         <div onClick={() => { navigation("/") }} className="absolute z-10 md:mt-2 mx-8  hover:cursor-pointer">
@@ -39,7 +39,7 @@ export default function LayoutMenuExplanation() {
                     </nav>
                     <h1 className={`font-bold  text-5xl md:text-[6rem] text-center text-${OperationsColor(operation)[0]} ${operation == "Multiplicación" && 'text-[2rem] md:text-6xl'} `}>{operation}</h1>
                 </div>
-                <div class="h-full w-ful">
+                <div class="h-full w-ful justify-center">
                     <Outlet />
                 </div>
             </div>

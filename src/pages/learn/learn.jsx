@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Outlet, useLoaderData } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Outlet, useLoaderData, useNavigate } from "react-router-dom";
 import Step1 from "../../components/explanation/Addition/Step1";
 import LearnAddition from "./add/learnAddition";
 import LearnSubtraction from "./subtraction/learnSubtraction";
@@ -18,24 +18,35 @@ export async function loader({ params }) {
 function Learn() {
   const params = useLoaderData();
   const operation = params.operation
+  const navigate = useNavigate  ()
   const page= params.page
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+    // Realizar la navegación aquí (si es necesario)
+    const newPath = `/aprender/${operation}/${newPage}`;
+    // Utiliza tu método de navegación específico
+    navigate(newPath);
+  };
 
   const OperationComponent = () => {
     switch (operation) {
       case "Suma":
         return (
-          <div class="h-full w-full grid grid-rows-[80%,20%] justify-between">
+          <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto">
-                <LearnAddition page={page} />
+                <LearnAddition page={page} currentPage={currentPage} />
             </div>
               <div className="flex justify-center items-center w-full">
-                <PaginationAddition page={page}/>
+                <PaginationAddition page={page} currentPage={currentPage}
+          setCurrentPage={setCurrentPage}/>
               </div>
           </div>
         );
       case "Resta":
         return (
-          <div class="h-full w-full grid grid-rows-[80%,20%] justify-between">
+          <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto">
               <LearnSubtraction page={page} />
             </div>
@@ -46,7 +57,7 @@ function Learn() {
         );
       case "Multiplicacion":
         return (
-          <div class="h-full w-full grid grid-rows-[80%,20%] justify-between">
+          <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto">
               <LearnMultiplication page={page} />
             </div>
@@ -57,7 +68,7 @@ function Learn() {
         );
       case "Division":
         return (
-          <div class="h-full w-full grid grid-rows-[80%,20%] justify-between">
+          <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto">
               <LearnDivision page={page} />
             </div>
