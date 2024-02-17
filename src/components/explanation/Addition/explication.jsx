@@ -46,7 +46,7 @@ export default function Explication() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row w-full items-center justify-evenly text-2xl">
-          <embed src={Arrow} className="rotate-90 md:rotate-0 py-[15%] md:px-[5%]" />
+          <embed src={Arrow} className="rotate-90 md:rotate-0 pt-[15%] pr-5 md:px-[5%]" />
           <div className="flex w-full items-center justify-center">
             <table className="border border-gray-300 border-dashed">
               <tbody>

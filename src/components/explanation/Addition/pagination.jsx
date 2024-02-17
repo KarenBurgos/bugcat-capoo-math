@@ -6,6 +6,7 @@ import { MdNavigateBefore,MdNavigateNext } from "react-icons/md";
 export default function Pagination({ currentPage, setCurrentPage }) {
     const location = useLocation();
     const navigate = useNavigate();
+    console.log(currentPage)
 
     const onClickNext = () => {
       if(currentPage === "Explicacion"){
@@ -13,8 +14,8 @@ export default function Pagination({ currentPage, setCurrentPage }) {
         navigate(`/aprender/Suma/1`);
       }
       if (currentPage < 4) {
-        setCurrentPage(currentPage + 1);
-        navigate(`/aprender/Suma/${currentPage + 1}`);
+        setCurrentPage(parseInt(currentPage) + 1);
+        navigate(`/aprender/Suma/${parseInt(currentPage) + 1}`);
       }
     };
   
@@ -24,8 +25,8 @@ export default function Pagination({ currentPage, setCurrentPage }) {
         navigate(`/aprender/Suma/Explicacion`);
       }
       if (currentPage > 1) {
-        setCurrentPage(currentPage - 1);
-        navigate(`/aprender/Suma/${currentPage - 1}`);
+        setCurrentPage(parseInt(currentPage) - 1);
+        navigate(`/aprender/Suma/${parseInt(currentPage) - 1}`);
       }
     };
   

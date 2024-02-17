@@ -11,7 +11,7 @@ export default function Step2() {
         <Container img={additionImg} step="2" color="#FEEB70">
             <p className="py-4">Los números se suman de derecha a izquierda, asi que empezamos sumando los números que estan primero a la derecha</p>
                     <p> Si la suma es mayor que 9 y tienes mas columnas de números, coloca el último número debajo de la línea y el 1 en la siguiente columna.</p>
-                    <div className="flex justify-between text-3xl items-center">
+                    <div className="flex flex-col md:flex-row justify-between text-3xl items-center flex-col-reverse ">
                         <div>
                             <p className="pl-11  text-pink">1</p>
                             <div className="flex">

@@ -8,7 +8,7 @@ import Container from "../container";
 export default function Step1() {
     return (
         <Container img={additionImg} step="1" color="#FEEB70">
-             <p className="py-4">Ordena los números uno debajo del otro</p>
+             <p className="py-4 text-base">Ordena los números uno debajo del otro</p>
                     <div className="flex text-2xl">
                         <table className="table-auto border-collapse border border-gray-300 border-dashed">
                             <tbody>

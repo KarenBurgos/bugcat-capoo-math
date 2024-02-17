@@ -27,7 +27,7 @@ function Learn() {
       case "Suma":
         return (
           <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
-            <div className="overflow-hidden overflow-y-auto">
+            <div className="overflow-hidden overflow-y-auto h-full">
                 <LearnAddition page={page} currentPage={currentPage} />
             </div>
               <div className="flex justify-center items-center w-full">

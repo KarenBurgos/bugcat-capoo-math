@@ -9,7 +9,7 @@ export default function LearnAddition({ page, currentPage }) {
     const location = useLocation();
     const path = location.pathname
     return (
-    <div >
+    <div className="h-full">
         {path === "/aprender/Suma/Explicacion" && <Explication />}
         {path === "/aprender/Suma/1" && <Step1 />}
         {path === "/aprender/Suma/2" && <Step2 />}
