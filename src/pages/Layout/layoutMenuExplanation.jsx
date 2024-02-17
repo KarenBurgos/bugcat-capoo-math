@@ -20,10 +20,10 @@ export default function LayoutMenuExplanation() {
     }
 
     return (
-        <div className="h-screen w-screen">
-            <div className="h-full grid grid-rows-[30vh,70vh] grid-cols-1 justify-center">
+        <div className="relative h-screen w-screen">
+            <div className="h-full grid grid-rows-[10vh,90vh] items-center md:grid-rows-[30vh,70vh] grid-cols-1 justify-center">
                 <div className="">
-                    <nav>
+                    <nav className="hidden md:inline">
                         <div onClick={() => { navigation("/") }} className="absolute z-10 md:mt-2 mx-8  hover:cursor-pointer">
                             <p>Regresar</p>
                             <svg className="w-20 h-20" xmlns="http://www.w3.org/2000/svg" viewBox="4 5 24 24">
@@ -37,9 +37,18 @@ export default function LayoutMenuExplanation() {
                             <Link to="/aprender/Division/Explicacion">División</Link>
                         </div>
                     </nav>
+                    <nav className="md:hidden w-full h-full absolute z-10">
+                        <button>Exit</button>
+                        <div className="flex justify-evenly items-center px-16 pt-10 text-xl">
+                            <Link to="/aprender/Suma/Explicacion">Suma</Link>
+                            <Link to="/aprender/Resta/Explicacion">Resta</Link>
+                            <Link to="/aprender/Multiplicacion/Explicacion">Multiplicación</Link>
+                            <Link to="/aprender/Division/Explicacion">División</Link>
+                        </div>
+                    </nav>
                     <h1 className={`font-bold  text-5xl md:text-[6rem] text-center text-${OperationsColor(operation)[0]} ${operation == "Multiplicación" && 'text-[2rem] md:text-6xl'} `}>{operation}</h1>
                 </div>
-                <div class="h-full w-ful justify-center">
+                <div class="h-full w-ful justify-center ">
                     <Outlet />
                 </div>
             </div>

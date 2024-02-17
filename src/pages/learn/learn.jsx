@@ -22,7 +22,6 @@ function Learn() {
   const page= params.page
   const [currentPage, setCurrentPage] = useState("Explicacion");
 
-
   const OperationComponent = () => {
     switch (operation) {
       case "Suma":

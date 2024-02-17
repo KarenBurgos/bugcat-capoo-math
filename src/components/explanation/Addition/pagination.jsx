@@ -10,6 +10,7 @@ export default function Pagination({ currentPage, setCurrentPage }) {
     const onClickNext = () => {
       if(currentPage === "Explicacion"){
         setCurrentPage(1)
+        navigate(`/aprender/Suma/1`);
       }
       if (currentPage < 4) {
         setCurrentPage(currentPage + 1);
@@ -20,6 +21,7 @@ export default function Pagination({ currentPage, setCurrentPage }) {
     const onClickPrevious = () => {
       if(currentPage === 1){
         setCurrentPage("Explicacion")
+        navigate(`/aprender/Suma/Explicacion`);
       }
       if (currentPage > 1) {
         setCurrentPage(currentPage - 1);
@@ -28,8 +30,8 @@ export default function Pagination({ currentPage, setCurrentPage }) {
     };
   
     return (
-      <div className="flex justify-center items-end">
-         <div className="flex justify-center items-end ">
+      <div className="">
+         <div className="hidden md:inline-flex flex justify-center items-end ">
             <Link to="/aprender/Suma/Explicacion" className={`mx-5 px-5 py-2 ${location.pathname == '/aprender/Suma/Explicacion' ?  'bg-yellow' : 'bg-gray-300'}`}>
                 Explicación
             </Link>
@@ -49,7 +51,7 @@ export default function Pagination({ currentPage, setCurrentPage }) {
                 Ejercicios
             </Link>
         </div>
-        <div>
+        <div className="md:hidden">
           <button onClick={onClickPrevious}>previus</button>
           <p className="px-5">{currentPage}</p>
           <button onClick={onClickNext}>next</button>
