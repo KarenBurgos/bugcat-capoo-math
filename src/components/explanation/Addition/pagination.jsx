@@ -51,10 +51,10 @@ export default function Pagination({ currentPage, setCurrentPage }) {
                 Ejercicios
             </Link>
         </div>
-        <div className="md:hidden">
-          <button onClick={onClickPrevious}>previus</button>
+        <div className="flex">
+          <button onClick={onClickPrevious} className="bg-gray-300 px-2 py-2">previus</button>
           <p className="px-5">{currentPage}</p>
-          <button onClick={onClickNext}>next</button>
+          <button onClick={onClickNext} className="bg-gray-300 px-2 py-2">next</button>
         </div>
       </div>
     );
