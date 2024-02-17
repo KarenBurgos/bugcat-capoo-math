@@ -9,7 +9,7 @@ import Step7 from "../../../components/explanation/Division/Step7";
 import Step8 from "../../../components/explanation/Division/Step8";
 
 export default function LearnDivision({ page }) {
-    return (
+    return ( 
         <div className="overflow-y-auto">
             {page === "Explicacion" && <Explication />}
             {page === "1" && <Step1 />}

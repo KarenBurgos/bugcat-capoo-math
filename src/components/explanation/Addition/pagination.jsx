@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import { MdNavigateBefore,MdNavigateNext } from "react-icons/md";
 
 export default function Pagination({ currentPage, setCurrentPage }) {
     const location = useLocation();
     const navigate = useNavigate();
 
-    console.log(currentPage)
     const onClickNext = () => {
       if(currentPage === "Explicacion"){
         setCurrentPage(1)
@@ -30,8 +30,8 @@ export default function Pagination({ currentPage, setCurrentPage }) {
     };
   
     return (
-      <div className="">
-         <div className="hidden md:inline-flex flex justify-center items-end ">
+      <div className="flex justify-center">
+         <div className="hidden md:inline-flex justify-center items-end">
             <Link to="/aprender/Suma/Explicacion" className={`mx-5 px-5 py-2 ${location.pathname == '/aprender/Suma/Explicacion' ?  'bg-yellow' : 'bg-gray-300'}`}>
                 Explicación
             </Link>
@@ -51,10 +51,14 @@ export default function Pagination({ currentPage, setCurrentPage }) {
                 Ejercicios
             </Link>
         </div>
-        <div className="flex">
-          <button onClick={onClickPrevious} className="bg-gray-300 px-2 py-2">previus</button>
-          <p className="px-5">{currentPage}</p>
-          <button onClick={onClickNext} className="bg-gray-300 px-2 py-2">next</button>
+        <div className="md:hidden w-screen grid grid-cols-3 items-center justify-center">
+            <div className="flex justify-end">
+              <MdNavigateBefore size={40} onClick={onClickPrevious} className="bg-gray-300 " />
+            </div>
+            <p className="w-full text-center">{currentPage}</p>
+            <div className="flex justify-start">
+              <MdNavigateNext size={40} onClick={onClickNext} className="bg-gray-300 " />
+            </div>
         </div>
       </div>
     );

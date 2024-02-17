@@ -1,10 +1,35 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { MdNavigateBefore,MdNavigateNext } from "react-icons/md";
 
-export default function Pagination({page}){
-    const location = useLocation()
-    console.log(location)
+export default function Pagination({page, currentPage, setCurrentPage }){
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const onClickNext = () => {
+        if (currentPage === "Explicacion") {
+            setCurrentPage(1)
+            navigate(`/aprender/Multiplicacion/1`);
+        }
+        if (currentPage < 7) {
+            setCurrentPage(currentPage + 1);
+            navigate(`/aprender/Multiplicacion/${currentPage + 1}`);
+        }
+    };
+
+    const onClickPrevious = () => {
+        if (currentPage === 1) {
+            setCurrentPage("Explicacion")
+            navigate(`/aprender/Multiplicacion/Explicacion`);
+        }
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+            navigate(`/aprender/Multiplicacion/${currentPage - 1}`);
+        }
+    };
+
     return(
-        <div className="flex justify-center items-end ">
+        <div>
+            <div className="hidden md:inline-flex flex justify-center items-end ">
             <Link to="/aprender/Multiplicacion/Explicacion" className={`mx-5 px-5 py-2 ${location.pathname == '/aprender/Multiplicacion/Explicacion' ?  'bg-purple' : 'bg-gray-300'}`}>
                 Explicación
             </Link>
@@ -32,6 +57,16 @@ export default function Pagination({page}){
             <Link to="/dificultad/Multiplicación" className='mx-5 px-5 py-2 bg-gray-300'>
                 Ejercicios
             </Link>
+            </div>
+            <div className="md:hidden w-screen grid grid-cols-3 items-center justify-center">
+                <div className="flex justify-end">
+                    <MdNavigateBefore size={40} onClick={onClickPrevious} className="bg-gray-300 " />
+                </div>
+                <p className="w-full text-center">{page}</p>
+                <div className="flex justify-start">
+                    <MdNavigateNext size={40} onClick={onClickNext} className="bg-gray-300 " />
+                </div>
+            </div>
         </div>
     )
 }

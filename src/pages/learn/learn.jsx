@@ -19,8 +19,8 @@ function Learn() {
   const params = useLoaderData();
   const operation = params.operation
   const navigate = useNavigate  ()
-  const page= params.page
-  const [currentPage, setCurrentPage] = useState("Explicacion");
+  const page = params.page
+  const [currentPage, setCurrentPage] = useState(page);
 
   const OperationComponent = () => {
     switch (operation) {
@@ -31,8 +31,7 @@ function Learn() {
                 <LearnAddition page={page} currentPage={currentPage} />
             </div>
               <div className="flex justify-center items-center w-full">
-                <PaginationAddition page={page} currentPage={currentPage}
-          setCurrentPage={setCurrentPage}/>
+                <PaginationAddition page={page} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
               </div>
           </div>
         );
@@ -40,10 +39,10 @@ function Learn() {
         return (
           <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto">
-              <LearnSubtraction page={page} />
+              <LearnSubtraction page={page} currentPage={currentPage}/>
             </div>
             <div className="flex justify-center items-center w-full">
-              <PaginationSubtraction page={page}/>
+              <PaginationSubtraction page={page} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
             </div>
           </div>
         );
@@ -51,10 +50,10 @@ function Learn() {
         return (
           <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto">
-              <LearnMultiplication page={page} />
+              <LearnMultiplication page={page} currentPage={currentPage}/>
             </div>
             <div className="flex justify-center items-center w-full">
-              <PaginationMultiplication page={page}/>
+              <PaginationMultiplication page={page} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
             </div>
           </div>
         );
@@ -62,10 +61,10 @@ function Learn() {
         return (
           <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto">
-              <LearnDivision page={page} />
+              <LearnDivision page={page} currentPage={currentPage}/>
             </div>
             <div className="flex justify-center items-center w-full">
-              <PaginationDivision page={page}/>
+              <PaginationDivision page={page} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
             </div>
           </div>
         );
