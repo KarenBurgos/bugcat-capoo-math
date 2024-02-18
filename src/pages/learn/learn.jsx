@@ -26,7 +26,7 @@ function Learn() {
     switch (operation) {
       case "Suma":
         return (
-          <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
+          <div class="h-full w-full grid grid-rows-[80%,10%] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto h-full">
                 <LearnAddition page={page} currentPage={currentPage} />
             </div>
@@ -37,7 +37,7 @@ function Learn() {
         );
       case "Resta":
         return (
-          <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
+          <div class="h-full w-full grid grid-rows-[80%,10%] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto">
               <LearnSubtraction page={page} currentPage={currentPage}/>
             </div>
@@ -48,7 +48,7 @@ function Learn() {
         );
       case "Multiplicacion":
         return (
-          <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
+          <div class="h-full w-full grid grid-rows-[80%,10%] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto">
               <LearnMultiplication page={page} currentPage={currentPage}/>
             </div>
@@ -59,7 +59,7 @@ function Learn() {
         );
       case "Division":
         return (
-          <div class="h-full w-full grid grid-rows-[80%,20%] grid-cols-1 justify-between">
+          <div class="h-full w-full grid grid-rows-[80%,10%] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto">
               <LearnDivision page={page} currentPage={currentPage}/>
             </div>

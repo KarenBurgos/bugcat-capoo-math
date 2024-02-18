@@ -6,7 +6,7 @@ export default function Container({ img, step, children, color }) {
     return (
         <div className="grid grid-cols-[15%,75%] md:grid-cols-[6%,74%,25%] justify-evenly pl-5 pr-10 md:px-20 w-screen">
             <StepNumber number={step} color={color} />
-            <div className="text-justify md:text-xl">
+            <div className="text-justify text-xl">
                 <div className=''>
                     {children}
                 </div>

@@ -16,7 +16,7 @@ export default function Explication() {
         <div className="">
           <p className="py-4 font-bold text-2xl">Sumar significa agregar</p>
           <div className="">
-            <p className="py-4 pr-2">
+            <p className="py-4 pr-2 text-xl">
               Si hay 3 perros jugando y llegan 2 mas En total tendremos 5 perros ( 3 + 2 = 5)
             </p>
             <div className="flex">
