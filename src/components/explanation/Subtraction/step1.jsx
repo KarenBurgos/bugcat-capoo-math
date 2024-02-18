@@ -9,7 +9,7 @@ export default function Step1() {
     return (
         <Container img={subtractionImg} step="1" color="#FD88BE">
             <p className="py-4">Ordena los números uno debajo del otro</p>
-            <div className="flex text-2xl">
+            <div className="flex text-2xl relative justify-center md:justify-start">
                 <table className="table-auto border-collapse border border-gray-300 border-dashed">
                     <tbody>
                         <tr>
@@ -26,7 +26,9 @@ export default function Step1() {
                         </tr>
                     </tbody>
                 </table>
-                <h1 className="p-5">-</h1>
+                <div className="absolute right-2 top-5 md:grid md:static">
+                    <h1 className="md:p-5">-</h1>
+                </div>
             </div>
         </Container>
     )

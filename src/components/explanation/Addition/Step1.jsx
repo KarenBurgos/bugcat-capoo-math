@@ -21,8 +21,8 @@ export default function Step1() {
                                     <td className="border border-2 border-gray-400 border-dashed px-7 py-4 md:px-10 md:py-5 ">5</td>
                                 </tr>
                                 <tr className="border border-t-4 border-gray-700">
-                                    <td className="border border-2 border-gray-400 border-dashed px-7 py-4 md:px-10 md:py-5"></td>
-                                    <td className="border border-2 border-gray-400 border-dashed px-7 py-4 md:px-10 md:py-5 "></td>
+                                    <td className="border border-2 border-gray-400 border-dashed px-7 py-8 md:px-10 md:py-5"></td>
+                                    <td className="border border-2 border-gray-400 border-dashed px-7 py-8 md:px-10 md:py-5 "></td>
                                 </tr>
                             </tbody>
                         </table>

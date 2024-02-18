@@ -9,7 +9,7 @@ export default function Step2() {
     return (
         <Container img={subtractionImg} step="2" color="#FD88BE">
             <p className="py-4">Empezamos a restar de derecha a izquierda, pero primero nos aseguramos que el número de arriba sea mayor que el de abajo para poder restar</p>
-                    <div className="flex justify-between text-3xl items-center">
+                    <div className="flex justify-center md:justify-between text-3xl items-center relative">
                         <div>
                             <div className="flex">
                                 <table className="border border-gray-300 border-dashed">
@@ -28,12 +28,11 @@ export default function Step2() {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <h1 className="p-5">-</h1>
+                                <div className="absolute right-2 top-5 md:grid md:static">
+                                    <h1 className="md:p-5">-</h1>
+                                </div>
                             </div>
-
                         </div>
-
-                       
                     </div>
         </Container>
     )

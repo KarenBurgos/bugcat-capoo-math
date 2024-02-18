@@ -9,7 +9,7 @@ export default function Step3() {
     return (
         <Container img={subtractionImg} step="3" color="#FD88BE">
             <p className="py-4">Luego restamos la siguiente columna</p>
-                    <div className="flex justify-between text-3xl items-center">
+                    <div className="flex justify-center md:justify-between text-3xl items-center relative">
                         <div>
                             <div className="flex">
                                 <table className="border border-gray-300 border-dashed">
@@ -28,7 +28,9 @@ export default function Step3() {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <h1 className="p-5">-</h1>
+                                <div className="absolute right-2 top-5 md:grid md:static">
+                                    <h1 className="md:p-5">-</h1>
+                                </div>
                             </div>
 
                         </div>

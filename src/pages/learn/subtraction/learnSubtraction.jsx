@@ -11,7 +11,7 @@ export default function LearnSubtraction({  page, currentPage }) {
     const location = useLocation();
     const path = location.pathname
     return (
-    <div className="overflow-y-auto">
+    <div className="h-full">
         {page === "Explicacion" && <Explication />}
         {page === "1" && <Step1 />}
         {page === "2" && <Step2 />}

@@ -1,6 +1,5 @@
 import StepNumber from "../stepNumber";
-import Container from "../container";
-import { ArrowAdd } from "../../HoverArrow/Arrows"
+import Arrow from "../../../Assets/rightArrow.svg"
 import explanation1 from "../../../Assets/img/restaExplicación1.png"
 import explanation2 from "../../../Assets/img/restaExplicación2.png"
 import explanation3 from "../../../Assets/img/restaExplicación3.png"
@@ -11,24 +10,24 @@ export default function Explication() {
         <div className="md:py-10 md:px-20 flex justify-center items-start w-screen">
             <StepNumber color="#FD88BE" />
 
-            <div className="grid grid-cols-[70%,30%] w-full">
+            <div className="grid text-xl md:grid-cols-[70%,30%] w-full items-center">
                 <div>
                     <p className="py-4 font-bold text-2xl">Restar significa quitar o disminuir</p>
-                    <div className="flex items-end">
+                    <div className="md:flex items-end">
                         <p className="pb-2">Si tenemos 3 sandias </p>
-                        <img className="h-1/2 w-1/2" src={explanation1} />
+                        <img className="md:h-1/2 md:w-1/2" src={explanation1} />
                     </div>
-                    <div className="flex items-end">
+                    <div className="md:flex items-end">
                         <p className="pb-2">y nos comemos 2 </p>
-                        <img className="h-1/2 w-1/2" src={explanation2} />
+                        <img className="md:h-1/2 md:w-1/2" src={explanation2} />
                     </div>
-                    <div className="flex items-center pt-10">
+                    <div className="md:flex items-center pt-10">
                         <p>No quedara solo una sandia </p>
-                        <img className="h-20 w-16" src={explanation3} />
+                        <img className="h-24 md:h-20 md:w-16" src={explanation3} />
                     </div>
                 </div>
-                <div className="flex w-full items-center justify-center text-2xl">
-                    <ArrowAdd true/>
+                <div className="grid md:flex w-full items-center justify-center text-2xl">
+                    <embed src={ Arrow } className="rotate-90 py-5 md:rotate-0 md:p-0" />
 
                     <div className="flex justify-center w-full">
                         <table className="border border-gray-300 border-dashed">

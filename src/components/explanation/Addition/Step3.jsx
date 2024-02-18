@@ -5,7 +5,7 @@ import leftArrow from "../../../Assets/leftArrow.svg"
 import curvLeftArro from  "../../../Assets/curvLeftArrow.svg"
 import Container from "../container";
 
-//suma
+//suma 
 export default function Step3() {
     return (
         <Container img={additionImg} step="3" color="#FEEB70">
