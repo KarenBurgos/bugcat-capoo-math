@@ -4,7 +4,7 @@ import StepNumber from "./stepNumber";
 
 export default function Container({ img, step, children, color }) {
     return (
-        <div className="grid grid-cols-[15%,75%] md:grid-cols-[6%,74%,25%] justify-evenly pl-5 pr-10 md:px-20 w-screen">
+        <div className="grid grid-cols-[15%,75%] md:grid-cols-[6%,74%,25%] justify-evenly pl-[1rem] pr-[3rem] md:px-20 w-screen">
             <StepNumber number={step} color={color} />
             <div className="text-justify text-xl mix-[1440px]:text-3xl">
                 <div className=''>

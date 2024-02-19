@@ -13,7 +13,7 @@ export default function Pagination({ page, currentPage, setCurrentPage }) {
         }
         if (currentPage < 6) {
             setCurrentPage(currentPage + 1);
-            navigate(`/aprender/Resta/${currentPage + 1}`);
+            navigate(`/aprender/Resta/${parseInt(currentPage) + 1}`);
         }
     };
 
@@ -24,7 +24,7 @@ export default function Pagination({ page, currentPage, setCurrentPage }) {
         }
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);
-            navigate(`/aprender/Resta/${currentPage - 1}`);
+            navigate(`/aprender/Resta/${parseInt(currentPage) - 1}`);
         }
     };
 

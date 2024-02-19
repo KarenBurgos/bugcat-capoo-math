@@ -20,9 +20,9 @@ export default function Step4() {
                     El número de al lado le presta 1 al de la derecha convirtiendolo en
                     una decena y se le resta ese 1 que presto
                 </p>
-                <section id="container-case-1" className="grid md:flex text-3xl items-end md:my-0">
-                    <section className="grid justify-center items-center relative my-10 md:flex md:justify-between md:m-0">
-                        <div className="flex">
+                <section id="container-case-1-sub" className="grid min-[1220px]:flex text-3xl items-end md:my-0">
+                    <article className="grid justify-center items-center relative mt-10 min-[1220px]:flex min-[1220px]:justify-between min-[1220px]:m-0">
+                        <article className="flex">
                             <table className="border border-gray-300 border-dashed">
                                 <tbody>
                                     <tr>
@@ -50,12 +50,12 @@ export default function Step4() {
                             <div className="absolute right-2 top-5 md:grid md:static ">
                                 <h1 className="md:p-5">-</h1>
                             </div>
-                        </div>
-                        <embed src={Arrow} className="mt-10 h-16 rotate-90 md:rotate-0 md:mr-10 w-full" />
-                    </section>
+                        </article>
+                        <embed src={Arrow} className="mt-10 h-16 rotate-90 min-[1220px]:rotate-0 md:mr-10 w-full" />
+                    </article>
 
-                    <section className="grid justify-center items-center relative mb-10 md:flex md:justify-between md:m-0">
-                        <section className="flex">
+                    <article className="grid justify-center items-center relative my-10 min-[1220px]:flex min-[1220px]:justify-between min-[1220px]:m-0">
+                        <article className="flex">
                             <table className="border border-gray-300 border-dashed">
                                 <tbody>
                                     <tr>
@@ -78,12 +78,12 @@ export default function Step4() {
                             <div className="absolute right-14 top-5 md:grid md:static">
                                 <h1 className="md:p-5">-</h1>
                             </div>
-                        </section>
-                        <embed src={Arrow} className="mt-10 h-16 rotate-90 w-full md:rotate-0 md:mr-10" />
-                    </section>
+                        </article>
+                        <embed src={Arrow} className="mt-10 h-16 rotate-90 w-full min-[1220px]:rotate-0 md:mr-10" />
+                    </article>
 
-                    <section className="grid md:flex mt-5 mb-10 justify-center md:justify-between relative md:mb-0">
-                        <section className="flex flex-col justify-center items-center">
+                    <article className="grid md:flex mt-5 mb-10 justify-center min-[1220px]:justify-between relative md:mb-0">
+                        <article className="flex flex-col justify-center items-center">
                             <embed className="p-2" src={CurvArrow} />
                             <div className="flex">
                                 <table className="border border-gray-300 border-dashed text-center">
@@ -115,20 +115,20 @@ export default function Step4() {
                                     <h1 className="md:p-5">-</h1>
                                 </div>
                             </div>
-                        </section>
-                    </section>
+                        </article>
+                    </article>
                 </section>
 
-                <section id="container-case-1" className="md:my-2">
+                <section id="container-case-2-sub" className="md:my-2">
                     <p className="py-4 font-medium md:mt-5">Caso especial 2</p>
                     <p className="pb-4">
                         En este ejemplo el 3 le presta uno al 2 asi que quedaria 12 y se le
                         resta el 1 que presto al 3 asi que quedaria como 2
                     </p>
                     <p>Ahora si 12 es mayor que 6 asi que podemos hacer la resta</p>
-                    <div className="md:my-5">
-                        <section id="container-case-2" className="grid md:flex text-3xl items-end md:my-1">
-                            <section className="grid justify-center items-center relative mt-10  md:flex md:justify-between md:m-0">
+                    <article className="md:my-5">
+                        <article className="grid min-[1220px]:flex text-3xl items-end md:my-1">
+                            <article className="grid justify-center items-center relative my-10 min-[1220px]:flex min-[1220px]:justify-between min-[1220px]:m-0">
                                 <div className="flex">
                                     <table className="border border-gray-300 border-dashed">
                                         <tbody>
@@ -158,11 +158,11 @@ export default function Step4() {
                                         <h1 className="md:p-5">-</h1>
                                     </div>
                                 </div>
-                                <embed src={Arrow} className="mt-10 h-16 rotate-90 w-full md:rotate-0 md:mr-10 md:mt-0" />
-                            </section>
+                                <embed src={Arrow} className="mt-10 h-16 rotate-90 w-full min-[1220px]:rotate-0 md:mr-10 md:mt-0" />
+                            </article>
                         
-                            <section className="grid justify-center items-center relative my-10 md:flex md:justify-between md:m-0">
-                                <section className="flex">
+                            <article className="grid justify-center items-center relative my-10 min-[1220px]:flex min-[1220px]:justify-between min-[1220px]:m-0">
+                                <article className="flex">
                                     <table className="border border-gray-300 border-dashed">
                                         <tbody>
                                             <tr>
@@ -185,13 +185,13 @@ export default function Step4() {
                                     <div className="absolute right-14 top-5 md:grid md:static">
                                         <h1 className="md:p-5">-</h1>
                                     </div>
-                                </section>
-                                <embed src={Arrow} className="mt-10 h-16 rotate-90 w-full md:rotate-0 md:mr-10 md:mt-0" />
-                            </section>
+                                </article>
+                                <embed src={Arrow} className="mt-10 h-16 rotate-90 w-full min-[1220px]:rotate-0 md:mr-10 min-[1220px]:mt-0" />
+                            </article>
                         
                         
-                            <section className="grid md:flex my-5 justify-center md:justify-between relative md:m-0">
-                                <section className="flex">
+                            <article className="grid min-[1220px]:flex my-5 justify-center min-[1220px]:justify-between relative min-[1220px]:m-0">
+                                <article className="flex">
                                     <table className="border border-gray-300 border-dashed text-center">
                                         <tbody>
                                             <tr>
@@ -223,10 +223,10 @@ export default function Step4() {
                                     <div className="absolute right-0 top-5 md:grid md:static">
                                         <h1 className="md:p-5">-</h1>
                                     </div>
-                                </section>
-                            </section>
-                        </section>
-                    </div>
+                                </article>
+                            </article>
+                        </article>
+                    </article>
                 </section>
             </div>
         </Container>

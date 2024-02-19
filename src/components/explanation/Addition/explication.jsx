@@ -9,7 +9,7 @@ import Arrow from "../../../Assets/rightArrow.svg"
 //suma
 export default function Explication() {
   return (
-  <div className="md:py-10 md:px-20 flex items-start justify-center w-screen">
+    <div className="md:py-10 md:px-20 flex items-start justify-center w-screen">
       <StepNumber color="#FEEB70" />
 
       <div className="md:grid md:grid-cols-[80%,20%] justify-evenly items-center w-full">
@@ -20,7 +20,7 @@ export default function Explication() {
               Si hay 3 perros jugando y llegan 2 mas En total tendremos 5 perros ( 3 + 2 = 5)
             </p>
             <div className="flex">
-              <div className="md:flex text-2xl items-center">
+              <div className="min-[1220px]:flex text-2xl items-center">
                 <div className="flex">
                   <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />
                   <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />

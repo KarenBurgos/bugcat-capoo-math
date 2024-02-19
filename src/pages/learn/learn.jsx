@@ -18,7 +18,6 @@ export async function loader({ params }) {
 function Learn() {
   const params = useLoaderData();
   const operation = params.operation
-  const navigate = useNavigate  ()
   const page = params.page
   const [currentPage, setCurrentPage] = useState(page);
 
