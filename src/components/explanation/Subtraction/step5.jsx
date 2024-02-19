@@ -12,8 +12,8 @@ export default function Step5() {
                 Si necesitamos prestar y el número de al lado es 0 pedimos prestado del
                 número siguiente
             </p>
-            <section id="container-case-3-sub" className="grid min-[1220px]:flex text-3xl items-end md:my-0">
-                <article className="grid justify-center items-center relative my-10 min-[1220px]:flex min-[1220px]:justify-between min-[1220px]:m-0">
+            <section id="container-case-3-sub" className="grid min-[1220px]:flex text-3xl items-end my-10 min-[1220px]:my-0">
+                <article className="grid justify-center items-center relative min-[1220px]:flex min-[1220px]:justify-between min-[1220px]:m-0">
                     <article className="flex">
                         <table className="border border-gray-300 border-dashed md:text-2xl min-[1440px]:text-3xl">
                             <tbody>
@@ -38,8 +38,9 @@ export default function Step5() {
                                     </td>
                                 </tr>
                                 <tr className="border border-t-4 border-gray-700">
-                                    <td className="border border-2 border-gray-400 border-dashed px-6 py-4 min-[1900px]:px-10 min-[1900px]:py-5"></td>
-                                    <td className="border border-2 border-gray-400 border-dashed px-6 py-4 min-[1900px]:px-10 min-[1900px]:py-5 text-amber-400"></td>
+                                    <td className="border border-2 border-gray-400 border-dashed px-6 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
+                                    <td className="border border-2 border-gray-400 border-dashed px-6 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
+                                    <td className="border border-2 border-gray-400 border-dashed px-6 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -47,7 +48,7 @@ export default function Step5() {
                             <h1 className="md:p-5">-</h1>
                         </div>
                     </article>
-                    <embed src={Arrow} className="mt-10 h-16 rotate-90 min-[1220px]:rotate-0 md:mr-10 w-full" />
+                    <embed src={Arrow} className="mt-10 h-14 rotate-90 min-[1220px]:rotate-0 md:mr-10 w-full min-[1220px]:mt-0"/>
                 </article>
 
                 <article className="grid justify-center items-center relative min-[1220px]:flex min-[1220px]:justify-between min-[1220px]:m-0">
@@ -76,7 +77,8 @@ export default function Step5() {
                                         </td>
                                     </tr>
                                     <tr className="border border-t-4 border-gray-700">
-                                        <td className="border border-2 border-gray-400 border-dashed px-6 py-4 min-[1900px]:px-10 min-[1900px]:py-5 "></td>
+                                        <td className="border border-2 border-gray-400 border-dashed px-6 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
+                                        <td className="border border-2 border-gray-400 border-dashed px-6 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -85,7 +87,7 @@ export default function Step5() {
                             </div>
                         </article>
                     </article>
-                    <embed src={Arrow} className="mt-10 h-16 rotate-90 min-[1220px]:rotate-0 md:mr-10 w-full" />
+                    <embed src={Arrow} className="my-10 h-16 rotate-90 min-[1220px]:rotate-0 md:mr-10 w-full"/>
                 </article>
 
                 <article>
@@ -114,8 +116,9 @@ export default function Step5() {
                                         </td>
                                     </tr>
                                     <tr className="border border-t-4 border-gray-700">
-                                        <td className="border border-2 border-gray-400 border-dashed px-6 py-4 min-[1900px]:px-10 min-[1900px]:py-5"></td>
-                                        <td className="border border-2 border-gray-400 border-dashed px-6 py-4 min-[1900px]:px-10 min-[1900px]:py-5 "></td>
+                                        <td className="border border-2 border-gray-400 border-dashed px-6 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
+                                        <td className="border border-2 border-gray-400 border-dashed px-6 py-6 min-[1900px]:px-10 min-[1900px]:py-5 "></td>
+                                        <td className="border border-2 border-gray-400 border-dashed px-6 py-6 min-[1900px]:px-10 min-[1900px]:py-5 "></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -131,7 +134,7 @@ export default function Step5() {
                 <p className="py-4 font-medium">Caso especial 4</p>
                 <p className="py-4"> Primero se presta 1 a el número que se tiene a la derecha y se resta el 1 que acaba de prestar (en este caso el 2 queda como 1 y el 0 como 10)</p>
                 <p className="py-4">  Ahora si se puede pedir prestado 1 al 10 y se realiza la resta </p>
-                <section className="grid justify-center items-center relative min-[1220px]:flex min-[1220px]:justify-between min-[1220px]:m-0">
+                <section className="grid justify-center items-end relative my-10 min-[1220px]:flex min-[1220px]:justify-between">
                     <article className="grid min-[1220px]:flex relative">
                         <div className="grid">
                         <div className="w-full grid justify-start ">
@@ -161,9 +164,9 @@ export default function Step5() {
                                             </td>
                                         </tr>
                                         <tr className="border border-t-4 border-gray-700">
-                                            <td className="border border-2 border-gray-400 border-dashed px-6 py-4 min-[1900px]:px-10 min-[1900px]:py-5"></td>
-                                            <td className="border border-2 border-gray-400 border-dashed px-6 py-4 min-[1900px]:px-10 min-[1900px]:py-5"></td>
-                                            <td className="border border-2 border-gray-400 border-dashed px-6 py-4 min-[1900px]:px-10 min-[1900px]:py-5 text-amber-400"></td>
+                                            <td className="border border-2 border-gray-400 border-dashed px-6 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
+                                            <td className="border border-2 border-gray-400 border-dashed px-6 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
+                                            <td className="border border-2 border-gray-400 border-dashed px-6 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -172,7 +175,7 @@ export default function Step5() {
                                 </div>
                             </article>
                         </div>
-                        <embed src={Arrow} className="mt-10 h-16 rotate-90 min-[1220px]:rotate-0 md:mr-10 " />
+                        <embed src={Arrow} className="my-10 h-16 rotate-90 min-[1220px]:rotate-0 md:mr-10 w-full"/>
                     </article>
 
                     <article className="grid min-[1220px]:flex relative">
@@ -204,9 +207,9 @@ export default function Step5() {
                                             </td>
                                         </tr>
                                         <tr className="border border-t-4 border-gray-700">
-                                            <td className="border border-2 border-gray-400 border-dashed px-4 py-4 min-[1900px]:px-10 min-[1900px]:py-5"></td>
-                                            <td className="border border-2 border-gray-400 border-dashed px-4 py-4 min-[1900px]:px-10 min-[1900px]:py-5"></td>
-                                            <td className="border border-2 border-gray-400 border-dashed px-4 py-4 min-[1900px]:px-10 min-[1900px]:py-5 text-amber-400"></td>
+                                            <td className="border border-2 border-gray-400 border-dashed px-4 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
+                                            <td className="border border-2 border-gray-400 border-dashed px-4 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
+                                            <td className="border border-2 border-gray-400 border-dashed px-4 py-6 min-[1900px]:px-10 min-[1900px]:py-5"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -215,8 +218,7 @@ export default function Step5() {
                                 </div>
                             </article>
                         </div>
-                        <embed src={Arrow} className="mt-10 h-16 rotate-90 min-[1220px]:rotate-0 md:mr-10" />
-
+                        <embed src={Arrow} className="my-10 h-16 rotate-90 min-[1220px]:rotate-0 md:mr-10 w-full"/>
                     </article>
 
                     <article>

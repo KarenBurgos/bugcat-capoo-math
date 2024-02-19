@@ -158,7 +158,7 @@ export default function Step4() {
                                         <h1 className="md:p-5">-</h1>
                                     </div>
                                 </div>
-                                <embed src={Arrow} className="mt-10 h-16 rotate-90 w-full min-[1220px]:rotate-0 md:mr-10 md:mt-0" />
+                                <embed src={Arrow} className="mt-10 h-16 rotate-90 w-full min-[1220px]:rotate-0 md:mr-10 min-[1220px]:mt-0" />
                             </article>
                         
                             <article className="grid justify-center items-center relative my-10 min-[1220px]:flex min-[1220px]:justify-between min-[1220px]:m-0">
