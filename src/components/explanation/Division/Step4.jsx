@@ -9,10 +9,10 @@ export default function step4() {
     return (
         <div>
             <Container img={divImg} step="4" color="#98E6E6">
-
-                <p>Buscamos un número que multiplicado por el dividendo que es 2 nos de 2, en este caso es 1. Colocamos el 1 en el cociente y el resultado de 2 x 1 debajo del divisor y restamos</p>
-
-                <section className="my-10 grid grid-cols-[30%,70%] w-full ">
+                <section>
+                    <p>Buscamos un número que multiplicado por el dividendo que es 2 nos de 2, en este caso es 1. Colocamos el 1 en el cociente y el resultado de 2 x 1 debajo del divisor y restamos</p>
+                </section>
+                <section className="my-10 grid grid-cols-2 md:grid-cols-[30%,70%] w-full">
                     <table className="table-auto flex flex-col justify-start">
                         <tr>
                             <td className="px-5 py-1"><span className="pl-2 pr-1">8</span>2</td>
@@ -39,8 +39,8 @@ export default function step4() {
                 </section>
                 <section>
                     <p>Ya que no nos quedan mas números en el divisor por bajar el resultado seria el siguiente</p>
-                    <div className="my-10 flex items-center">
-                        <table>
+                    <div className="my-10 grid md:flex justify-center md:items-center md:justify-start">
+                        <table className="mb-16 mb:m-0">
                             <tr>
                                 <td className="px-5 py-1"><span className="pl-2 pr-1">8</span>2</td>
                                 <td className="px-5 py-1" style={{ borderBottom: "2px solid  rgb(55 65 81)", borderLeft: "2px solid  rgb(55 65 81)" }}>2</td>
@@ -62,7 +62,9 @@ export default function step4() {
                                 <td className=""></td>
                             </tr>
                         </table>
-                        <embed src={ Arrow } className="px-10"/>
+                        <div className="rotate-90 md:rotate-0 items-center">
+                            <embed src={ Arrow } className="px-10"/>
+                        </div>
                         <div>
                             <p className="text-blue-medium">cociente = 42, residuo = 0</p>
                         </div>

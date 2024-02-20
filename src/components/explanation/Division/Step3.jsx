@@ -9,11 +9,10 @@ export default function step3() {
     return (
         <div>
             <Container img={divImg} step="3" color="#98E6E6">
-                
                 <p>Ahora restamos el 8 del dividendo con el 4 que resulto de la multiplicación</p>
                 <div className="flex my-10 w-full">
                     <div>
-                        <table>
+                        <table className="text-2xl">
                             <tr>
                                 <td className="px-5 py-1"><span className="text-blue-medium pl-2">8</span>2</td>
                                 <td className="px-5 py-1 text-blue-medium" style={{ borderBottom: "2px solid  rgb(55 65 81)", borderLeft: "2px solid  rgb(55 65 81)" }}>2</td>
@@ -36,7 +35,7 @@ export default function step3() {
                 <section>
                     <p>Luego de colocar el resultado de la resta bajamos el siguiente número del divisor a la par</p>
                      <div className="my-10">
-                        <table>
+                        <table className="text-2xl grid justify-center md:justify-start">
                             <tr>
                                 <td className="px-5 py-1"><span className="text-blue-medium pl-2 pr-1">8</span>2</td>
                                 <td className="px-5 py-1 text-blue-medium" style={{ borderBottom: "2px solid  rgb(55 65 81)", borderLeft: "2px solid  rgb(55 65 81)" }}>2</td>
@@ -54,7 +53,7 @@ export default function step3() {
                 </section>
                 <section className="my-5">
                     <p>Ahora tomamos el número que tenemos abajo el nuevo dividendo (si el residuo fuera 1 y bajaramos el 2 el nuevo dividendo seria 12) y realizamos el mismo proceso para dividir</p>
-                    <table className="my-10">
+                    <table className="my-10 text-2xl grid justify-center md:justify-start">
                             <tr>
                                 <td className="px-5 py-1"><span className="pl-2 pr-1">8</span>2</td>
                                 <td className="px-5 py-1 text-blue-medium" style={{ borderBottom: "2px solid  rgb(55 65 81)", borderLeft: "2px solid  rgb(55 65 81)" }}>2</td>

@@ -8,7 +8,7 @@ import multiplicationImg from "../../../Assets/img/div.png"
 export default function step1() {
     return (
         <div>
-            <p className="text-center text-4xl">Realicemos la operación 25 x 15</p>
+            <p className="text-center text-2xl md:text-4xl">Realicemos la operación 25 x 15</p>
             <Container img={multiplicationImg} step="1" color="#9B5ED8">
 
                 <p className="py-4">Ordena los números uno debajo del otro</p>

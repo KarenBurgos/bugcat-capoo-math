@@ -8,9 +8,7 @@ import Arrow from "../../../Assets/rightArrow.svg"
 export default function step6() {
     return (
         <div>
-
             <Container img={divImg} step="" color="#98E6E6">
-
                 <h2 className="py-4 text-2xl font-bold">Caso especial 2 </h2>
                 <p>Si al iniciar a dividir el dividendo es menor que el divisor tomamos el siguiente número para realizar la operación</p>
                 <div className="flex w-full items-center">
@@ -28,21 +26,25 @@ export default function step6() {
                 </table>
                 <p className="my-5">Pero 1 es menor que 5 asi que tomamos el siguiente número para poder dividir, ahora dividimos entre 15:</p>
 
-                <section className="flex items-center">
-                    <table className="">
+                <section className="grid md:flex items-center">
+                    <table className="grid justify-center">
                         <tr>
                             <td className="px-5 py-1 pl-7"><span className="text-blue-medium">15</span>0</td>
                             <td className="px-5 py-1 text-blue-medium" style={{ borderBottom: "2px solid  rgb(55 65 81)", borderLeft: "2px solid  rgb(55 65 81)" }}>5</td>
                         </tr>
                     </table>
-                    <embed src={Arrow} className="px-10" />
-                    <div>
+                    <div className="px-10 flex justify-center my-10 md:m-0">
+                        <embed src={Arrow} className=" rotate-90 md:rotate-0" />
+                    </div>
+                    <div className="grid justify-center">
                         <p className="py-2">5 x 1 = 5</p>
                         <p className="py-2">5 x 2 = 10</p>
                         <p className="py-2 text-blue-medium">5 x 3 = 15</p>
                     </div>
-                    <embed src={Arrow} className="px-10" />
-                    <table className="">
+                    <div className="px-10 flex justify-center my-10 md:m-0">
+                        <embed src={Arrow} className=" rotate-90 md:rotate-0" />
+                    </div>
+                    <table className="grid justify-center">
                         <tr>
                             <td className="px-5 py-1 pl-7"><span className="">15</span>0</td>
                             <td className="px-5 py-1" style={{ borderBottom: "2px solid  rgb(55 65 81)", borderLeft: "2px solid  rgb(55 65 81)" }}>5</td>
@@ -63,9 +65,9 @@ export default function step6() {
                 <p className="py-5">En este ejemplo al bajar el siguiente numero nos queda la division de 0 ÷ 5, y ya que no tenemos otro númeor que podamos bajar colocamos 0 en el cociente</p>
                 
 
-                <section className="flex items-center">
+                <section className="grid md:flex items-center">
                     
-                    <table className="">
+                    <table className="grid justify-center">
                         <tr>
                             <td className="px-5 py-1 pl-7"><span className="">15</span>0</td>
                             <td className="px-5 py-1" style={{ borderBottom: "2px solid  rgb(55 65 81)", borderLeft: "2px solid  rgb(55 65 81)" }}>5</td>
@@ -79,9 +81,13 @@ export default function step6() {
                             <td className="px-5 pl-7 py-1"></td>
                         </tr>
                     </table>
-                    <embed src={Arrow} className="px-5"/>
-                    <p className="my-10">La respuesta quedaria:</p>
-                    <p className="text-blue-medium px-2">Cociente= 31, residuo= 0</p>
+                    <div className="px-10 flex justify-center my-10 md:m-0">
+                        <embed src={Arrow} className=" rotate-90 md:rotate-0" />
+                    </div>
+                    <div className="grid md:flex justify-center">
+                        <p>La respuesta quedaria:</p>
+                        <p className="text-blue-medium md:px-2">Cociente= 31, residuo= 0</p>
+                    </div>
                 </section>
 
              

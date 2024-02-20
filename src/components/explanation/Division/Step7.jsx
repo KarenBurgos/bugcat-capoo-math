@@ -19,7 +19,7 @@ export default function step7() {
                 </div>
 
                 <p className="my-5">Empezamos tomando dos dígitos del dividendo ya que le dividos tien 2 dígitos y realizamos la división</p>
-                <table className="">
+                <table className="grid justify-center md:justify-start">
                     <tr>
                         <td className="px-5 py-1 pl-7"><span className="text-blue-medium">10</span>50</td>
                         <td className="px-5 py-1 text-blue-medium" style={{ borderBottom: "2px solid  rgb(55 65 81)", borderLeft: "2px solid  rgb(55 65 81)" }}>10</td>
@@ -34,7 +34,7 @@ export default function step7() {
                     </tr>
                 </table>
                 <p className="my-5">Ahora bajamos el siguiente número. Aqui nos damos cuenta que no podemos dividir 5 entre 10 ya que el 5 es menor, pero aun tenemos un 0 en el dividendo que podemos bajar</p>
-                <table className="">
+                <table className="grid justify-center md:justify-start">
                     <tr>
                         <td className="px-5 py-1 pl-7">1050</td>
                         <td className="px-5 py-1 text-blue-medium" style={{ borderBottom: "2px solid  rgb(55 65 81)", borderLeft: "2px solid  rgb(55 65 81)" }}>10</td>
@@ -49,8 +49,8 @@ export default function step7() {
                     </tr>
                 </table>
                 <p className="my-5">Para bajar ese 0 y que nos quede 50 entre 10 tenemos que poner primero un 0 al cociente</p>
-                <div className="flex items-center w-full">
-                    <table className="">
+                <div className="grid md:flex items-center w-full md:justify-start">
+                    <table className="grid justify-center">
                         <tr>
                             <td className="px-5 py-1 pl-7">1050</td>
                             <td className="px-5 py-1 text-blue-medium" style={{ borderBottom: "2px solid  rgb(55 65 81)", borderLeft: "2px solid  rgb(55 65 81)" }}>10</td>
@@ -64,8 +64,10 @@ export default function step7() {
                             <td className="px-5 pl-7 py-1"></td>
                         </tr>
                     </table>
-                    <embed src={Arrow} className="px-10" />
-                    <table className="">
+                    <div className="px-10 flex justify-center my-10 md:m-0">
+                        <embed src={Arrow} className=" rotate-90 md:rotate-0" />
+                    </div>
+                    <table className="grid justify-center items-start my-5">
                         <tr>
                             <td className="px-5 py-1 pl-7">1050</td>
                             <td className="px-5 py-1" style={{ borderBottom: "2px solid  rgb(55 65 81)", borderLeft: "2px solid  rgb(55 65 81)" }}>10</td>

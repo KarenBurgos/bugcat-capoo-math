@@ -31,7 +31,7 @@ export default function LayoutMenuExplanation() {
         <div className="relative h-screen w-screen">
             <div className="h-full grid grid-rows-[10vh,90vh] items-center md:grid-rows-[30vh,70vh] grid-cols-1 justify-center">
                 <d iv className="">
-                    <nav className="hidden md:inline">
+                    <nav className="hidden md:inline min-[1024px]:block">
                         <div onClick={() => { navigation("/") }} className="absolute z-10 md:mt-2 mx-8  hover:cursor-pointer">
                             <p>Regresar</p>
                             <svg className="w-20 h-20" xmlns="http://www.w3.org/2000/svg" viewBox="4 5 24 24">
