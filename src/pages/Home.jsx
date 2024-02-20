@@ -66,7 +66,6 @@ function Main() {
                     <div className="w-full">
                         <Button label="Ejercicios" onClick={onHandlerPractice} color="yellow"/>
                     </div>
-
                 </div>
             </div>
 

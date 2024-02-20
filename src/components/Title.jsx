@@ -2,6 +2,7 @@ import BackButton from "./BackButton";
 
 export default function Title({ text, color, backButton, children }) {
     return (
+        
         <div className="flex flex-col h-full justify-center">
             {backButton && <BackButton />}
             <div className="flex flex-col w-full justify-center">

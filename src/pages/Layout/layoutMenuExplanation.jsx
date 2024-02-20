@@ -4,6 +4,7 @@ import OperationsColor from "../../Assets/OperationsColor"
 import { SoundProvider } from "../../components/Sound";
 import { useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 export async function loader({ params }) {
     return params
@@ -86,9 +87,7 @@ export default function LayoutMenuExplanation() {
                                         </div>
                                         <div onClick={() => { navigation("/") }} className=" hover:cursor-pointer flex flex-col items-center justify-center w-full">
                                             <p>Regresar</p>
-                                            <svg className="w-20 h-20 pl-4" xmlns="http://www.w3.org/2000/svg" viewBox="4 5 24 24">
-                                                <path d="M19 12a1 1 0 0 1-1 1H8.414l1.293 1.293a1 1 0 0 1-1.414 1.414l-3-3a1 1 0 0 1 0-1.414l3-3a1 1 0 0 1 1.414 1.414L8.414 11H18a1 1 0 0 1 1 1z" fill="#000000" data-name="Left" />
-                                            </svg>
+                                            <FaArrowLeftLong className="w-20 h-20 pl-4" />
                                         
                                 </div>
                                 </div>
