@@ -1,12 +1,13 @@
-import SubTitle from "./SubTitle"
+import SubTitle from "./SubTitle";
 
-export default function Banner({difficult,difficultcolor}){
+export default function Banner({ difficult, difficultcolor }) {
+  console.log(`bg-${difficultcolor}`);
 
-    console.log(`bg-${difficultcolor}`)
-
-    return(
-        <div className={`bg-${difficultcolor} bg-opacity-60 py-5 md:mx-20 md:my-5 rounded important`}>
-            <SubTitle text={difficult}/>
-        </div>
-    )
+  return (
+    <div
+      className={`bg-${difficultcolor} bg-opacity-60 py-5 md:mx-20 md:my-5 rounded important`}
+    >
+      <SubTitle text={difficult} />
+    </div>
+  );
 }

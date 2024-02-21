@@ -6,7 +6,7 @@ import RandomImage from "../../utils/imgUtils/RandomImage";
 
 export default function SubExercise({ operation, difficult }) {
   const [numbers, setNumbers] = useState(
-    numberGenerator({ operation, difficult })
+    numberGenerator({ operation, difficult }),
   );
   const [answer, setAnswer] = useState("");
   const [answerStatus, setAnswerStatus] = useState("");
@@ -52,7 +52,7 @@ export default function SubExercise({ operation, difficult }) {
                 disabled={answerStatus}
                 className="px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md"
               />
-               {answerStatus === "" || answerStatus === false ? (
+              {answerStatus === "" || answerStatus === false ? (
                 <button
                   className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(operation)[0]} bg-${OperationsColor(operation)[0]} bg-opacity-60 rounded-md`}
                   type="submit"
@@ -81,7 +81,12 @@ export default function SubExercise({ operation, difficult }) {
       </div>
       <div className="flex items-center justify-center h-full w-full">
         <div className="flex flex-col w-8/12 justify-evenly items-center relative">
-        {useMemo(() => <RandomImage answer={answerStatus} />, [answerStatus])}
+          {useMemo(
+            () => (
+              <RandomImage answer={answerStatus} />
+            ),
+            [answerStatus],
+          )}
           <svg
             className={`opacity-50 w-1/2 md:w-[90%] absolute top-50 left-50 -z-10`}
             xmlns="http://www.w3.org/2000/svg"

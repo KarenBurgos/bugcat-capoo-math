@@ -12,7 +12,8 @@ function Button({ label, onClick, isSoundEnabled, operation, color }) {
   const hoverAudioRef = useRef(new Audio(hoverSound));
   const clickAudioRef = useRef(new Audio(clickSound));
 
-  const isEffectSoundEnabled = JSON.parse(localStorage.getItem('isEffectSoundEnabled')) || false;
+  const isEffectSoundEnabled =
+    JSON.parse(localStorage.getItem("isEffectSoundEnabled")) || false;
 
   const onHover = () => {
     setIsHovered(true);
@@ -22,12 +23,12 @@ function Button({ label, onClick, isSoundEnabled, operation, color }) {
     if (isEffectSoundEnabled) {
       hoverAudioRef.current.play();
     }
-  }
+  };
 
   const onOut = () => {
     hoverAudioRef.current.pause();
     hoverAudioRef.current.currentTime = 0;
-  }
+  };
 
   const onLeave = () => {
     setIsHovered(false);
@@ -54,24 +55,25 @@ function Button({ label, onClick, isSoundEnabled, operation, color }) {
       hoverAudioRef.current.currentTime = 0;
     };
 
-    hoverAudioRef.current.addEventListener('ended', handleAudioEnd);
+    hoverAudioRef.current.addEventListener("ended", handleAudioEnd);
 
     return () => {
-      hoverAudioRef.current.removeEventListener('ended', handleAudioEnd);
+      hoverAudioRef.current.removeEventListener("ended", handleAudioEnd);
     };
   }, []);
 
-
-  const getVisibility = (hoveredLabel) => isHovered ? (label === hoveredLabel ? "block" : "hidden") : "hidden";
-
+  const getVisibility = (hoveredLabel) =>
+    isHovered ? (label === hoveredLabel ? "block" : "hidden") : "hidden";
 
   return (
     <>
-      <div className="flex justify-center items-center"
+      <div
+        className="flex justify-center items-center"
         onMouseOver={onHover}
         onMouseLeave={onLeave}
         onMouseEnter={onEnter}
-        onMouseOut={onOut}>
+        onMouseOut={onOut}
+      >
         <ArrowAdd visibility={getVisibility("Suma")} />
         <ArrowSub visibility={getVisibility("Resta")} />
         <ArrowMult visibility={getVisibility("Multiplicación")} />
@@ -79,10 +81,13 @@ function Button({ label, onClick, isSoundEnabled, operation, color }) {
         <button
           className="relative overflow-hidden w-full md:w-1/2 h-20 px-10 py-2 border border-2 border-customBlack rounded-md group"
           onClick={handleClick}
-
         >
-          <span className="relative z-10 text-[1.2rem] md:text-xl">{label}</span>
-          <span className={`absolute -inset-0 bg-${color} w-0 transition-all duration-300 group-hover:w-full`}></span>
+          <span className="relative z-10 text-[1.2rem] md:text-xl">
+            {label}
+          </span>
+          <span
+            className={`absolute -inset-0 bg-${color} w-0 transition-all duration-300 group-hover:w-full`}
+          ></span>
         </button>
       </div>
     </>

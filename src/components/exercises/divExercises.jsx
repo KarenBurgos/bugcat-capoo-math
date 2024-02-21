@@ -6,7 +6,7 @@ import RandomImage from "../../utils/imgUtils/RandomImage";
 
 export default function DivExercise({ operation, difficult }) {
   const [numbers, setNumbers] = useState(
-    numberGenerator({ operation, difficult })
+    numberGenerator({ operation, difficult }),
   );
   const [quotient, setQuotient] = useState("");
   const [quotientStatus, setQuotientStatus] = useState("");
@@ -48,9 +48,9 @@ export default function DivExercise({ operation, difficult }) {
     setRemainder("");
     setRemainderStatus("");
   };
-  console.log(remainderStatus)
-  
-  console.log(quotientStatus)
+  console.log(remainderStatus);
+
+  console.log(quotientStatus);
 
   return (
     <div className="grid md:grid-cols-[60%,40%] w-full justify-center items-center h-full md:pb-10">
@@ -62,7 +62,7 @@ export default function DivExercise({ operation, difficult }) {
             <h1 className="px-1">{numbers[1]}</h1>
           </div>
           <div className="flex justify-center h-full w-full md:pb-5">
-            <form onSubmit={onSubmit}  className="flex flex-col md:flex-row">
+            <form onSubmit={onSubmit} className="flex flex-col md:flex-row">
               <input
                 value={quotient}
                 onChange={handleQuotientChange}
@@ -80,7 +80,9 @@ export default function DivExercise({ operation, difficult }) {
                 className="px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md"
               />
 
-              {quotientStatus === "" || quotientStatus === false || remainderStatus === false ? (
+              {quotientStatus === "" ||
+              quotientStatus === false ||
+              remainderStatus === false ? (
                 <button
                   className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(operation)[0]} bg-${OperationsColor(operation)[0]} bg-opacity-60 rounded-md`}
                   type="submit"
@@ -89,7 +91,7 @@ export default function DivExercise({ operation, difficult }) {
                 </button>
               ) : null}
 
-              {quotientStatus === true && remainderStatus === true? (
+              {quotientStatus === true && remainderStatus === true ? (
                 <button
                   className={`px-10 py-2 mt-5 md:my-5 border border-2 border-green-400 bg-green-400 bg-opacity-60 rounded-md`}
                   type="button"
@@ -111,7 +113,12 @@ export default function DivExercise({ operation, difficult }) {
       </div>
       <div className="flex items-center justify-center h-full w-full">
         <div className="flex flex-col w-8/12 justify-evenly items-center relative">
-        {useMemo(() => <RandomImage answer={quotientStatus && remainderStatus} />, [quotientStatus, remainderStatus])}
+          {useMemo(
+            () => (
+              <RandomImage answer={quotientStatus && remainderStatus} />
+            ),
+            [quotientStatus, remainderStatus],
+          )}
           <svg
             className={`opacity-50 w-1/2 md:w-[90%] absolute top-50 left-50 -z-10`}
             xmlns="http://www.w3.org/2000/svg"

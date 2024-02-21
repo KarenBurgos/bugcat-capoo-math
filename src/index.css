@@ -7,15 +7,24 @@ body {
   font-family: fredoka;
   width: 100vw;
   height: 100%;
-  color: #0F1020;
+  color: #0f1020;
   background-color: #ffffff;
   opacity: 1;
-  background-image:  linear-gradient(#f1f1f1 1.6px, transparent 1.6px), linear-gradient(to right, #f1f1f1 1.6px, #ffffff 1.6px);
-  background-size: 3vw 3vw;
+  background-image: linear-gradient(#f1f1f1 1.6px, transparent 1.6px),
+    linear-gradient(to right, #f1f1f1 1.6px, #ffffff 1.6px);
+  background-size: 10vw 10vw;
   height: 100vh;
 }
 
-html, body, #root {
+@media screen and (min-width: 1024px) {
+  body {
+    background-size: 3vw 3vw;
+  }
+}
+
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
 }
@@ -34,18 +43,17 @@ body.home-page {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-*{
+* {
   box-sizing: 0;
   margin: 0;
   padding: 0;
-
 }
 
-#root{
+#root {
   height: 100%;
 }
 
@@ -68,11 +76,8 @@ code {
   animation: slidebg 5s linear infinite;
 } */
 
-
-
-
 @keyframes slidebg {
   to {
-    background-position:20vw;
+    background-position: 20vw;
   }
 }

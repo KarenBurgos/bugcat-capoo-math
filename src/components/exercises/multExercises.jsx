@@ -6,7 +6,7 @@ import RandomImage from "../../utils/imgUtils/RandomImage";
 
 export default function MultExercise({ operation, difficult }) {
   const [numbers, setNumbers] = useState(
-    numberGenerator({ operation, difficult })
+    numberGenerator({ operation, difficult }),
   );
   const [answer, setAnswer] = useState("");
   const [answerStatus, setAnswerStatus] = useState("");
@@ -43,7 +43,7 @@ export default function MultExercise({ operation, difficult }) {
             <h1 className="px-1">{numbers[1]}</h1>
           </div>
           <div className="flex justify-center h-full w-full md:pb-5">
-            <form onSubmit={onSubmit}  className="flex flex-col md:flex-row">
+            <form onSubmit={onSubmit} className="flex flex-col md:flex-row">
               <input
                 value={answer}
                 onChange={handleInputChange}
@@ -73,7 +73,7 @@ export default function MultExercise({ operation, difficult }) {
             </form>
           </div>
           <div className="text-4xl flex justify-center items-center">
-          {answerStatus === true && <h1>¡Correcto!</h1>}
+            {answerStatus === true && <h1>¡Correcto!</h1>}
             {answerStatus === false && <h2>¡Incorrecto!</h2>}
             {answerStatus === "" && <h2></h2>}
           </div>
@@ -81,7 +81,12 @@ export default function MultExercise({ operation, difficult }) {
       </div>
       <div className="flex items-center justify-center h-full w-full">
         <div className="flex flex-col w-8/12 justify-evenly items-center relative">
-        {useMemo(() => <RandomImage answer={answerStatus} />, [answerStatus])}
+          {useMemo(
+            () => (
+              <RandomImage answer={answerStatus} />
+            ),
+            [answerStatus],
+          )}
           <svg
             className={`opacity-50 w-1/2 md:w-[90%] absolute top-50 left-50 -z-10`}
             xmlns="http://www.w3.org/2000/svg"
