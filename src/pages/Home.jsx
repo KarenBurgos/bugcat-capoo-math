@@ -19,7 +19,10 @@ function Main() {
   }, []);
 
   function onHandlerPractice() {
-    navigate(`/practica`);
+    setTimeout(() => {
+      navigate(`/practica`);
+    }, 3000);
+    
   }
 
   function onHandlerLearn() {

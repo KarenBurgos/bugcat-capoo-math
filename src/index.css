@@ -18,7 +18,13 @@ body {
 
 @media screen and (min-width: 1024px) {
   body {
-    background-size: 3vw 3vw;
+    background-size: 4vw 4vw;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-size: 6vw 6vw;
   }
 }
 
@@ -30,7 +36,7 @@ body,
 }
 
 body.home-page {
-  animation: moveBackground 150s linear infinite;
+  animation: moveBackground 100s linear infinite;
 }
 
 @keyframes moveBackground {
@@ -57,27 +63,19 @@ code {
   height: 100%;
 }
 
-/* .rainbow{
-  cursor: pointer;  
+.fondo-menu{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px); 
+  animation: moveBackground 10s linear ;
 }
 
-.rainbow-5:hover {
-  background-image: linear-gradient(
-    to right, 
-    #FEEB70,
-    #FEEB70 25%,
-    #FD88BE 25%,
-    #FD88BE 50%,
-    #98E6E6 50%,
-    #98E6E6 75%,
-    #9B5ED8 75%,
-    #9B5ED8 100%
-  );
-  animation: slidebg 5s linear infinite;
-} */
-
-@keyframes slidebg {
-  to {
-    background-position: 20vw;
+@keyframes menuBackground {
+  0% {
+    background-color: rgba(0, 0, 0, 0) ;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 1) ;
   }
 }

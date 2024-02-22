@@ -24,7 +24,7 @@ function Learn() {
     switch (operation) {
       case "Suma":
         return (
-          <div class="h-full w-full grid grid-rows-[80%,10%] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
+          <div class="h-full w-full grid grid-rows-[90vh,10vh] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto h-full">
               <LearnAddition page={page} currentPage={currentPage} />
             </div>

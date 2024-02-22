@@ -12,9 +12,9 @@ function LayoutMain() {
     >
       <div className="grid items-center">
         {location.pathname == "/practica" && <BackButton />}
-        <h1 className="text-center md:grid">
+        <h1 className="text-center mt-3 md:grid md:p-0">
           <span className="grid md:flex justify-center">
-            <span className="md:pr-4 font-bold text-7xl md:text-[7rem]">
+            <span className="md:pr-4 font-bold text-6xl md:text-[7rem]">
               <span className="text-yellow">B</span>
               <span className="text-pink">u</span>
               <span className="text-blue">g</span>
@@ -22,7 +22,7 @@ function LayoutMain() {
               <span className="text-purple">a</span>
               <span className="text-pink">t</span>
             </span>
-            <span className="md:pl-4 font-bold text-5xl md:text-[7rem]">
+            <span className="font-bold text-6xl md:text-[7rem] md:pl-4">
               <span className="text-yellow">C</span>
               <span className="text-purple">a</span>
               <span className="text-blue">p</span>
