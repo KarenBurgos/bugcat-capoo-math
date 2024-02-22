@@ -14,7 +14,8 @@ export default function Menu({ operation }) {
     return (
         <div className="bg-white md:bg-transparent py-5">
             <nav className="hidden md:inline min-[1024px]:block">
-                <div onClick={ () => {navigation("/") }} className="absolute z-10 md:mt-2 mx-8  hover:cursor-pointer">
+                <div onClick={ () => {navigation("/") }} className="absolute z-10 md:mt-2 mx-8  hover:cursor-pointer"
+                >
                     <p>Regresar</p>
                     <svg
                         className="w-20 h-20"

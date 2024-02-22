@@ -31,7 +31,7 @@ export default function BurgerMenu() {
         </div>
       </div>
 
-        <div className={` absolute top-0 left-0 w-screen h-screen  ${movilMenu ? 'inline fondo-menu' : 'hidden'} transition-all duration-500`}>
+        <div className={` absolute top-0 left-0 w-screen h-full  ${movilMenu ? 'inline fondo-menu' : 'hidden'} transition-all duration-500`}>
         </div>
           <div className={` md:hidden absolute z-30 top-0 left-0 w-screen h-screen flex items-center ${movilMenu ? 'translate-x-0 ' : 'translate-x-[-100%]'} transition-all duration-300`}>
             <nav className="md:hidden h-screen absolute z-20 bg-white md:bg-none rounded top-0 ">
@@ -44,7 +44,7 @@ export default function BurgerMenu() {
                     className="absolute right-2"
                   />
                 </div>
-                <div className="h-full grid grid-rows-[70%,30%] items-center justify-center">
+                <div className="grid grid-rows-[70%,30%] items-center justify-center">
                   <div className="flex flex-col h-full items-start px-16 pt-10 text-xl">
                     <Link to="/aprender/Suma/Explicacion" className={`py-5 w-full px-10 ${path.startsWith("/aprender/Suma") && "bg-yellow-light"}`}>
                       Suma

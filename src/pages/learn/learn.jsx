@@ -24,8 +24,8 @@ function Learn() {
     switch (operation) {
       case "Suma":
         return (
-          <div class="h-full w-full grid grid-rows-[90vh,10vh] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
-            <div className="overflow-hidden overflow-y-auto h-full">
+          <div class="w-full grid grid-rows-[80vh,10vh] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
+            <div className="overflow-hidden overflow-y-auto ">
               <LearnAddition page={page} currentPage={currentPage} />
             </div>
             <div className="flex justify-center items-center w-full">
@@ -39,7 +39,7 @@ function Learn() {
         );
       case "Resta":
         return (
-          <div class="h-full w-full grid grid-rows-[80%,10%] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
+          <div class="h-full w-full grid  md:grid-rows-[80%,20%] grid-cols-1 justify-between">
             <div className="overflow-hidden overflow-y-auto h-full">
               <LearnSubtraction page={page} currentPage={currentPage} />
             </div>
@@ -88,7 +88,7 @@ function Learn() {
   };
 
   return (
-    <div className="h-full w-full">
+    <div className="md:h-full w-full">
       <OperationComponent />
     </div>
   );

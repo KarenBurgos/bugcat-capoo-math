@@ -22,7 +22,7 @@ export default function LayoutMenuExplanation() {
  
   return (
     <div className="relative h-screen w-screen">
-      <div className="h-full grid grid-rows-[10vh,90vh] items-center md:grid-rows-[30vh,70vh] grid-cols-1 justify-center">
+      <div className="h-full grid grid-rows-[10%,90%] items-center md:grid-rows-[30vh,70vh] justify-center">
         <Menu operation={operation}/>
         <div class="h-full w-ful justify-center ">
           <Outlet />
