@@ -31,7 +31,7 @@ export default function BurgerMenu() {
         </div>
       </div>
 
-        <div className={` absolute top-0 left-0 w-screen h-screen  ${movilMenu ? 'z-20 fondo-menu' : '-z-20'} transition-all duration-500`}>
+        <div className={` absolute top-0 left-0 w-screen h-screen  ${movilMenu ? 'inline fondo-menu' : 'hidden'} transition-all duration-500`}>
         </div>
           <div className={` md:hidden absolute z-30 top-0 left-0 w-screen h-screen flex items-center ${movilMenu ? 'translate-x-0 ' : 'translate-x-[-100%]'} transition-all duration-300`}>
             <nav className="md:hidden h-screen absolute z-20 bg-white md:bg-none rounded top-0 ">
