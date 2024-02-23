@@ -35,7 +35,7 @@ export default function ShowDivisionParts() {
             </p>
           </article>
           <article
-            className={`md:hidden absolute z-10 top-0 left-0 bg-black bg-opacity-50 w-screen h-screen flex justify-center items-center`}
+            className={`md:hidden absolute z-10 top-0 left-0 bg-black backdrop-blur-sm bg-opacity-50 w-screen h-screen flex justify-center items-center`}
           >
             <div className="bg-white rounder rounded-lg">
               <IoClose

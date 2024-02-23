@@ -8,10 +8,8 @@ import explanation3 from "../../../Assets/img/candies-yellow.png";
 //suma
 export default function Explication() {
   return (
-    <div className="pl-2 pr-16 md:py-10 md:px-20 grid grid-cols-[15%,85%] md:flex items-start text-justify">
-      <StepNumber color="#b78ae3" />
-
-      <div className="grid ">
+    <Container color="#9B5ED8">
+      <div className="">
         <div>
           <p className="py-4 font-bold text-2xl">
             La multiplicación significa sumar una misma cantidad varias veces
@@ -67,6 +65,6 @@ export default function Explication() {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
