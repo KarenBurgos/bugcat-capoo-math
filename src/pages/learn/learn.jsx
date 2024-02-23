@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import LearnAddition from "./add/learnAddition";
 import LearnSubtraction from "./subtraction/learnSubtraction";
@@ -9,6 +9,7 @@ import PaginationSubtraction from "../../components/explanation/Subtraction/pagi
 import PaginationMultiplication from "../../components/explanation/Multiplication/pagination";
 import PaginationDivision from "../../components/explanation/Division/pagination";
 
+
 export async function loader({ params }) {
   return params;
 }
@@ -18,6 +19,15 @@ function Learn() {
   const operation = params.operation;
   const page = params.page;
   const [currentPage, setCurrentPage] = useState(page);
+
+  {useMemo(
+    () => (
+      setCurrentPage(page)
+    ),
+    [operation],
+  )}
+  console.log(page)
+  console.log(currentPage)
 
   const OperationComponent = () => {
     return (

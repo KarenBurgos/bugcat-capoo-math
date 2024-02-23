@@ -11,8 +11,8 @@ export default function Pagination({ page, currentPage, setCurrentPage }) {
       navigate(`/aprender/Division/1`);
     }
     if (currentPage < 8) {
-      setCurrentPage(currentPage + 1);
-      navigate(`/aprender/Division/${currentPage + 1}`);
+      setCurrentPage(parseInt(currentPage) + 1);
+      navigate(`/aprender/Division/${parseInt(currentPage) + 1}`);
     }
   };
 

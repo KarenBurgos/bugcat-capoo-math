@@ -1,8 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import numberGenerator from "../../utils/mathUtils/MathUtils";
 import OperationsSimbol from "../../Assets/OperationSimbol";
 import OperationsColor from "../../Assets/OperationsColor";
 import RandomImage from "../../utils/imgUtils/RandomImage";
+import correctSound from "../../Assets/Audio/Correct.mp3";
+import incorrectSound from "../../Assets/Audio/Incorrect.mp3";
 
 export default function AddExercise({ operation, difficult }) {
   const [numbers, setNumbers] = useState(
@@ -10,6 +12,11 @@ export default function AddExercise({ operation, difficult }) {
   );
   const [answer, setAnswer] = useState("");
   const [answerStatus, setAnswerStatus] = useState("");
+  const correctSoundRef = useRef(new Audio(correctSound));
+  const incorrectSoundRef = useRef(new Audio(incorrectSound));
+
+  const isEffectSoundEnabled =
+  JSON.parse(localStorage.getItem("isEffectSoundEnabled")) || false;
 
   const handleInputChange = (e) => {
     setAnswer(e.target.value);
@@ -21,9 +28,16 @@ export default function AddExercise({ operation, difficult }) {
 
     if (answer === result.toString()) {
       setAnswerStatus(true);
+      if (isEffectSoundEnabled) {
+        correctSoundRef.current.play();
+      }
     } else {
       setAnswerStatus(false);
       setAnswer("");
+      if (isEffectSoundEnabled) {
+        incorrectSoundRef.current.play();
+      }
+      
     }
   };
 

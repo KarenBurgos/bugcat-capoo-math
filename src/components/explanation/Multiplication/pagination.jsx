@@ -11,8 +11,8 @@ export default function Pagination({ page, currentPage, setCurrentPage }) {
       navigate(`/aprender/Multiplicacion/1`);
     }
     if (currentPage < 7) {
-      setCurrentPage(currentPage + 1);
-      navigate(`/aprender/Multiplicacion/${currentPage + 1}`);
+      setCurrentPage(parseInt(currentPage) + 1);
+      navigate(`/aprender/Multiplicacion/${parseInt(currentPage) + 1}`);
     }
   };
 

@@ -4,7 +4,6 @@ import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 export default function Pagination({ currentPage, setCurrentPage }) {
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(currentPage);
 
   const onClickNext = () => {
     if (currentPage === "Explicacion") {

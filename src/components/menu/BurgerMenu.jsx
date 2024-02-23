@@ -5,7 +5,6 @@ import IconMovilMenu from "./iconMovilMenu";
 import clickSound from "../../Assets/Audio/Click.mp3";
 import {
   Link,
-  Outlet,
   useLoaderData,
   useLocation,
   useNavigate,

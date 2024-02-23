@@ -5,6 +5,7 @@ import {
 import OperationsColor from "../../Assets/OperationsColor";
 import BurgerMenu from "./BurgerMenu";
 import { useLocation } from "react-router-dom/dist";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 export default function Menu({ operation }) {
     const navigation = useNavigate();
@@ -13,31 +14,21 @@ export default function Menu({ operation }) {
 
     return (
         <div className="bg-white md:bg-transparent py-5">
-            <nav className="hidden md:inline min-[1024px]:block">
-                <div onClick={() => { navigation("/") }} className="absolute z-10 md:mt-2 mx-8  hover:cursor-pointer"
+            <nav className=" hidden md:inline min-[1024px]:block">
+                <div onClick={() => { navigation("/") }} className="absolute top-[5%] z-10 md:mt-2 mx-8  hover:cursor-pointer"
                 >
-                    <p>Regresar</p>
-                    <svg
-                        className="w-20 h-20"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="4 5 24 24"
-                    >
-                        <path
-                            d="M19 12a1 1 0 0 1-1 1H8.414l1.293 1.293a1 1 0 0 1-1.414 1.414l-3-3a1 1 0 0 1 0-1.414l3-3a1 1 0 0 1 1.414 1.414L8.414 11H18a1 1 0 0 1 1 1z"
-                            fill="#000000"
-                            data-name="Left"
-                        />
-                    </svg>
+                    <FaArrowLeftLong size={35} />
+                    
                 </div>
                 <div className="flex justify-evenly items-center px-16 pt-10 text-xl">
-                    <Link to="/aprender/Suma/Explicacion" className="overflow-hidden relative px-10 py-5">
+                    <Link to="/aprender/Suma/Explicacion" className="overflow-hidden relative px-12 py-5 rounded">
                         <span
                             className={`${path.startsWith("/aprender/Suma") ? "bg-yellow-light translate-x-0" : "translate-x-[-100%]"
                                 } absolute -inset-0 transition-all duration-300 -z-10`}
                         ></span>
                         Suma
                     </Link>
-                    <Link to="/aprender/Resta/Explicacion" className="overflow-hidden relative px-10 py-5">
+                    <Link to="/aprender/Resta/Explicacion" className="overflow-hidden relative px-12 py-5 rounded">
                         <span
                             className={`${path.startsWith("/aprender/Resta") ? "bg-pink-light translate-x-0" : "translate-x-[-100%]"
                                 } absolute -inset-0 transition-all duration-300 -z-10`}
@@ -45,14 +36,14 @@ export default function Menu({ operation }) {
                         Resta
 
                     </Link>
-                    <Link to="/aprender/Multiplicacion/Explicacion" className="overflow-hidden relative px-10 py-5">
+                    <Link to="/aprender/Multiplicacion/Explicacion" className="overflow-hidden relative px-12 py-5 rounded">
                         <span
                             className={`${path.startsWith("/aprender/Multiplicacion") ? "bg-purple-light translate-x-0" : "translate-x-[-100%]"
                                 } absolute -inset-0 transition-all duration-300 -z-10`}
                         ></span>
                         Multiplicación
                     </Link>
-                    <Link to="/aprender/Division/Explicacion" className="overflow-hidden relative px-10 py-5">
+                    <Link to="/aprender/Division/Explicacion" className="overflow-hidden relative px-12 py-5 rounded">
                         <span
                             className={`${path.startsWith("/aprender/Division") ? "bg-blue-light translate-x-0" : "translate-x-[-100%]"
                                 } absolute -inset-0 transition-all duration-300 -z-10`}
