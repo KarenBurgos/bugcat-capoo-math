@@ -1,4 +1,4 @@
-import Title from "../../Title";
+import Title from "../../header/Title";
 import StepNumber from "../stepNumber";
 import divImg from "../../../Assets/img/div.png";
 import Container from "../container";

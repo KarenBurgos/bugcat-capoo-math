@@ -1,4 +1,4 @@
-import Title from "../../Title";
+import Title from "../../header/Title";
 import StepNumber from "../stepNumber";
 import additionImg from "../../../Assets/img/Suma.png";
 import BackgroundLines from "../../BackgroundLines";

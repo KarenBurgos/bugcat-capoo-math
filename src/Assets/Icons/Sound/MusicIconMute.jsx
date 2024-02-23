@@ -1,4 +1,4 @@
-import MusicNoteMuteIcon from "./Music mute Icon.png";
+import MusicNoteMuteIcon from "./Mute";
 
 export default function MusicIconMute({ onClick }) {
   return (

@@ -1,11 +1,9 @@
-import iconMenu from "../Assets/img/logoBugcatCapoo.png"
-
 export default function IconMovilMenu() {
     return (
-        <div className="grid justify-center gap-4">
-            <h1 className="py-10">
-                <span className="grid justify-center">
-                    <span className="font-bold text-4xl">
+        <div>
+            <h1>
+                <span className="grid justify-center justify-items-center">
+                    <span className="font-bold text-5xl">
                         <span className="text-yellow">B</span>
                         <span className="text-pink">u</span>
                         <span className="text-blue">g</span>
@@ -13,7 +11,7 @@ export default function IconMovilMenu() {
                         <span className="text-purple">a</span>
                         <span className="text-pink">t</span>
                     </span>
-                    <span className="font-bold text-4xl">
+                    <span className="font-bold text-5xl">
                         <span className="text-yellow">C</span>
                         <span className="text-purple">a</span>
                         <span className="text-blue">p</span>

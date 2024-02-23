@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BackgroundLines from "../components/BackgroundLines";
 import HomeImg from "../Assets/img/Home.gif";
 import curvArrow from "../Assets/curvLeftArrow.svg";
-import Button from "../components/Button";
+import Button from "../components/buttons/Button";
 
 function Main() {
   const navigate = useNavigate();

@@ -1,7 +1,4 @@
 import subtractionImg from "../../../Assets/img/subtraction.png";
-import BackgroundLines from "../../BackgroundLines";
-import leftArrow from "../../../Assets/leftArrow.svg";
-import curvLeftArro from "../../../Assets/curvLeftArrow.svg";
 import Container from "../container";
 
 //resta

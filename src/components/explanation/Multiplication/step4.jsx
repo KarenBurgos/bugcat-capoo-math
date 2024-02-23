@@ -1,7 +1,3 @@
-import Title from "../../Title";
-import StepNumber from "../stepNumber";
-import additionImg from "../../../Assets/img/Suma.png";
-import BackgroundLines from "../../BackgroundLines";
 import Container from "../container";
 import multiplicationImg from "../../../Assets/img/div.png";
 import Arrow from "../../../Assets/rightArrow.svg";

@@ -1,8 +1,7 @@
 import React from "react";
-import Button from "../../components/Button";
+import Button from "../../components/buttons/Button";
 import BackgroundLines from "../../components/BackgroundLines";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import SubTitle from "../../components/SubTitle";
 import difficultImg from "../../Assets/img/difficult.gif";
 import OperationsColor from "../../Assets/OperationsColor";
 

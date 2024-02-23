@@ -1,7 +1,6 @@
-import { Outlet, useLoaderData, useLocation } from "react-router-dom";
-import SubTitle from "../../components/SubTitle";
-import { SoundProvider } from "../../components/Sound";
-import BackButton from "../../components/BackButton";
+import { Outlet, useLocation } from "react-router-dom";
+import SubTitle from "../../components/header/SubTitle";
+import BackButton from "../../components/buttons/BackButton";
 
 function LayoutMain() {
   const location = useLocation();

@@ -1,9 +1,6 @@
-import Title from "../../Title";
-import StepNumber from "../stepNumber";
 import divImg from "../../../Assets/img/div.png";
 import Container from "../container";
 import ShowDivisionParts from "./divisionParts";
-import Arrow from "../../../Assets/rightArrow.svg";
 
 export default function step3() {
   return (

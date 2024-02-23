@@ -1,7 +1,4 @@
-import Title from "../../Title";
-import StepNumber from "../stepNumber";
 import subtractionImg from "../../../Assets/img/subtraction.png";
-import BackgroundLines from "../../BackgroundLines";
 import Container from "../container";
 
 //resta

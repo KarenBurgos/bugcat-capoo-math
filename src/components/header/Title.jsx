@@ -1,4 +1,4 @@
-import BackButton from "./BackButton";
+import BackButton from "../buttons/BackButton";
 
 export default function Title({ text, color, backButton, children }) {
   return (

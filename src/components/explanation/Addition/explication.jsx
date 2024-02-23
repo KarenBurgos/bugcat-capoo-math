@@ -1,7 +1,4 @@
-import Title from "../../Title";
 import StepNumber from "../stepNumber";
-import additionImg from "../../../Assets/img/Suma.png";
-import BackgroundLines from "../../BackgroundLines";
 import dog from "../../../Assets/img/addExplanation.gif";
 import Arrow from "../../../Assets/rightArrow.svg";
 

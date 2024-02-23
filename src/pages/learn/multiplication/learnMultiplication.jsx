@@ -9,7 +9,7 @@ import Step7 from "../../../components/explanation/Multiplication/step7";
 
 export default function LearnMultiplication({ page }) {
   return (
-    <div className="h-full">
+    <div>
       {page === "Explicacion" && <Explication />}
       {page === "1" && <Step1 />}
       {page === "2" && <Step2 />}

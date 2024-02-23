@@ -10,7 +10,7 @@ import Step8 from "../../../components/explanation/Division/Step8";
 
 export default function LearnDivision({ page }) {
   return (
-    <div className="h-full">
+    <div>
       {page === "Explicacion" && <Explication />}
       {page === "1" && <Step1 />}
       {page === "2" && <Step2 />}

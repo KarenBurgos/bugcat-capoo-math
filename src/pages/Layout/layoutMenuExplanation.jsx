@@ -1,8 +1,6 @@
 import {
   Outlet,
-  useLoaderData,
-  useLocation,
-  useNavigate,
+  useLoaderData
 } from "react-router-dom";
 import Menu from "../../components/menu/Menu";
 

@@ -1,9 +1,7 @@
 import { Outlet, useLoaderData, useLocation } from "react-router-dom";
-import Title from "../../components/Title";
+import Title from "../../components/header/Title";
 import OperationsColor from "../../Assets/OperationsColor";
-import { SoundProvider } from "../../components/Sound";
-import SubTitle from "../../components/SubTitle";
-import Banner from "../../components/Banner";
+import SubTitle from "../../components/header/SubTitle";
 
 export async function loader({ params }) {
   return params.operation;

@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../../components/Button";
-import BackgroundLines from "../../components/BackgroundLines";
+import Button from "../../components/buttons/Button";
 
 function ExercisesMain() {
   const navigate = useNavigate();

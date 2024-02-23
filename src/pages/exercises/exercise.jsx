@@ -4,7 +4,7 @@ import AddExercise from "../../components/exercises/addExercise";
 import SubExercise from "../../components/exercises/subExercises";
 import MultExercise from "../../components/exercises/multExercises";
 import DivExercise from "../../components/exercises/divExercises";
-import Banner from "../../components/Banner";
+import Banner from "../../components/header/Banner";
 import OperationsColor from "../../Assets/OperationsColor";
 
 export async function loader({ params }) {

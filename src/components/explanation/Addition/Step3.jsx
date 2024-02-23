@@ -1,5 +1,4 @@
 import additionImg from "../../../Assets/img/Suma.png";
-import BackgroundLines from "../../BackgroundLines";
 import leftArrow from "../../../Assets/leftArrow.svg";
 import curvLeftArro from "../../../Assets/curvLeftArrow.svg";
 import Container from "../container";

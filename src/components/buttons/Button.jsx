@@ -1,11 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import HoverAdd from "./HoverBackground/HoverAdd";
-import HoverSub from "./HoverBackground/HoverSub";
-import HoverMult from "./HoverBackground/HoverMult";
-import HoverDiv from "./HoverBackground/HoverDiv";
-import { ArrowAdd, ArrowSub, ArrowMult, ArrowDiv } from "./HoverArrow/Arrows";
-import hoverSound from "../Assets/Audio/hoverSound.mp3";
-import clickSound from "../Assets/Audio/Click.mp3";
+import { ArrowAdd, ArrowSub, ArrowMult, ArrowDiv } from "../hoverArrow/Arrows";
+import hoverSound from "../../Assets/Audio/hoverSound.mp3";
+import clickSound from "../../Assets/Audio/Click.mp3";
 
 function Button({ label, onClick, isSoundEnabled, operation, color }) {
   const [isHovered, setIsHovered] = useState(false);

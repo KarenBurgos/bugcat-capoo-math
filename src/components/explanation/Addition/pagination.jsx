@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
-import ReactPaginate from "react-paginate";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 
 export default function Pagination({ currentPage, setCurrentPage }) {

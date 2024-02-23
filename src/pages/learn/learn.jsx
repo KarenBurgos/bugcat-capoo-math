@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Outlet, useLoaderData, useNavigate } from "react-router-dom";
-import Step1 from "../../components/explanation/Addition/Step1";
+import React, { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import LearnAddition from "./add/learnAddition";
 import LearnSubtraction from "./subtraction/learnSubtraction";
 import LearnMultiplication from "./multiplication/learnMultiplication";
@@ -21,70 +20,22 @@ function Learn() {
   const [currentPage, setCurrentPage] = useState(page);
 
   const OperationComponent = () => {
-    switch (operation) {
-      case "Suma":
-        return (
-          <div class="w-full grid grid-rows-[80vh,10vh] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
-            <div className="overflow-hidden overflow-y-auto ">
-              <LearnAddition page={page} currentPage={currentPage} />
-            </div>
-            <div className="flex justify-center items-center w-full">
-              <PaginationAddition
-                page={page}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-              />
-            </div>
-          </div>
-        );
-      case "Resta":
-        return (
-          <div class="h-full w-full grid  md:grid-rows-[80%,20%] grid-cols-1 justify-between">
-            <div className="overflow-hidden overflow-y-auto h-full">
-              <LearnSubtraction page={page} currentPage={currentPage} />
-            </div>
-            <div className="flex justify-center items-center w-full">
-              <PaginationSubtraction
-                page={page}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-              />
-            </div>
-          </div>
-        );
-      case "Multiplicacion":
-        return (
-          <div class="h-full w-full grid grid-rows-[80%,10%] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
-            <div className="overflow-hidden overflow-y-auto">
-              <LearnMultiplication page={page} currentPage={currentPage} />
-            </div>
-            <div className="flex justify-center items-center w-full">
-              <PaginationMultiplication
-                page={page}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-              />
-            </div>
-          </div>
-        );
-      case "Division":
-        return (
-          <div class="h-full w-full grid grid-rows-[80%,10%] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
-            <div className="overflow-hidden overflow-y-auto">
-              <LearnDivision page={page} currentPage={currentPage} />
-            </div>
-            <div className="flex justify-center items-center w-full">
-              <PaginationDivision
-                page={page}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-              />
-            </div>
-          </div>
-        );
-      default:
-        return null;
-    }
+    return (
+      <div class="md:h-full w-full grid grid-rows-[80vh,10vh] md:grid-rows-[80%,20%] grid-cols-1 justify-between">
+        <div className="overflow-hidden overflow-y-auto"> {/*Si la explicacion sobrepasa su espacio colocar un scroll*/}
+          {operation === "Suma" && <LearnAddition page={page} currentPage={currentPage} />}
+          {operation === "Resta" && <LearnSubtraction page={page} currentPage={currentPage} />}
+          {operation === "Multiplicacion" && <LearnMultiplication page={page} currentPage={currentPage} />}
+          {operation === "Division" && <LearnDivision page={page} currentPage={currentPage} />}
+        </div>
+        <div className="flex justify-center items-center w-full"> {/*Paginación de cada operación*/}
+          {operation === "Suma" && <PaginationAddition page={page} currentPage={currentPage} setCurrentPage={setCurrentPage} />}
+          {operation === "Resta" && <PaginationSubtraction page={page} currentPage={currentPage} setCurrentPage={setCurrentPage} />}
+          {operation === "Multiplicacion" && <PaginationMultiplication page={page} currentPage={currentPage} setCurrentPage={setCurrentPage} />}
+          {operation === "Division" && <PaginationDivision page={page} currentPage={currentPage} setCurrentPage={setCurrentPage} />}
+        </div>
+      </div>
+    );
   };
 
   return (
