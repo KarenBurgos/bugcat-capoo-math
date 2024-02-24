@@ -7,7 +7,7 @@ import Container from "../container";
 export default function Explication() {
   return (
     <Container color="#98E6E6">
-      <div className=" md:py-10 md:px-20 flex items-start text-justify">
+      <div className="flex items-start text-justify">
         <div className="flex flex-col w-full text-xl">
           <p className="py-4 font-bold text-2xl">
             La división significa repartir entre partes o grupos iguales.

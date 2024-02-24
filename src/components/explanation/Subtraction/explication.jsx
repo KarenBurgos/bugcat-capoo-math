@@ -9,7 +9,7 @@ import Container from "../container";
 export default function Explication() {
   return (
     <Container color="#FD88BE">
-      <div className="md:py-10 md:px-20 flex justify-center items-start w-screen">
+      <div className="flex justify-center items-start ">
         <div className="grid text-xl md:grid-cols-[70%,30%] w-full items-center">
           <div>
             <p className="py-4 font-bold text-2xl">

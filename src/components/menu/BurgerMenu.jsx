@@ -3,6 +3,7 @@ import { IoMenu, IoClose } from "react-icons/io5";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import IconMovilMenu from "./iconMovilMenu";
 import clickSound from "../../Assets/Audio/Click.mp3";
+import { AiOutlineHome } from "react-icons/ai";
 import {
   Link,
   useLoaderData,
@@ -97,7 +98,7 @@ export default function BurgerMenu() {
               >
                 <div className="flex justify-center items-center ">
                   
-                  <FaArrowLeftLong size={25} />
+                  <AiOutlineHome size={25} />
                 </div>
                 <p className="text-xl">Inicio</p>
               </div>
