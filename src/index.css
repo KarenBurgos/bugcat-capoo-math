@@ -5,23 +5,38 @@
 body {
   margin: 0;
   font-family: fredoka;
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  color: #0F1020;
+  color: #0f1020;
   background-color: #ffffff;
   opacity: 1;
-  background-image:  linear-gradient(#f1f1f1 1.6px, transparent 1.6px), linear-gradient(to right, #f1f1f1 1.6px, #ffffff 1.6px);
-  background-size: 3vw 3vw;
+  background-image: linear-gradient(#f1f1f1 1.6px, transparent 1.6px),
+    linear-gradient(to right, #f1f1f1 1.6px, #ffffff 1.6px);
+  background-size: 10vw 10vw;
   height: 100vh;
 }
 
-html, body, #root {
+@media screen and (min-width: 1024px) {
+  body {
+    background-size: 4vw 4vw;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-size: 6vw 6vw;
+  }
+}
+
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
 }
 
 body.home-page {
-  animation: moveBackground 150s linear infinite;
+  animation: moveBackground 100s linear infinite;
 }
 
 @keyframes moveBackground {
@@ -34,45 +49,34 @@ body.home-page {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-*{
+* {
   box-sizing: 0;
   margin: 0;
   padding: 0;
-
 }
 
-#root{
+#root {
   height: 100%;
 }
 
-/* .rainbow{
-  cursor: pointer;  
+.fondo-menu{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px);
+  z-index: 20;
+  animation: moveBackground 10s linear ;
 }
 
-.rainbow-5:hover {
-  background-image: linear-gradient(
-    to right, 
-    #FEEB70,
-    #FEEB70 25%,
-    #FD88BE 25%,
-    #FD88BE 50%,
-    #98E6E6 50%,
-    #98E6E6 75%,
-    #9B5ED8 75%,
-    #9B5ED8 100%
-  );
-  animation: slidebg 5s linear infinite;
-} */
-
-
-
-
-@keyframes slidebg {
-  to {
-    background-position:20vw;
+@keyframes menuBackground {
+  0% {
+    background-color: rgba(0, 0, 0, 0) ;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 1) ;
   }
 }

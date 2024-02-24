@@ -9,17 +9,17 @@ import Step7 from "../../../components/explanation/Division/Step7";
 import Step8 from "../../../components/explanation/Division/Step8";
 
 export default function LearnDivision({ page }) {
-    return (
-        <div className="overflow-y-auto">
-            {page === "Explicacion" && <Explication />}
-            {page === "1" && <Step1 />}
-            {page === "2" && <Step2 />}
-            {page === "3" && <Step3 />}
-            {page === "4" && <Step4 />}
-            {page === "5" && <Step5 />}
-            {page === "6" && <Step6 />}
-            {page === "7" && <Step7 />}
-            {page === "8" && <Step8 />}
-        </div>
-    )
+  return (
+    <div className="h-full">
+      {page === "Explicacion" && <Explication />}
+      {page === "1" && <Step1 />}
+      {page === "2" && <Step2 />}
+      {page === "3" && <Step3 />}
+      {page === "4" && <Step4 />}
+      {page === "5" && <Step5 />}
+      {page === "6" && <Step6 />}
+      {page === "7" && <Step7 />}
+      {page === "8" && <Step8 />}
+    </div>
+  );
 }

@@ -1,62 +1,77 @@
-import Title from "../../Title";
 import StepNumber from "../stepNumber";
-import additionImg from "../../../Assets/img/Suma.png"
-import BackgroundLines from "../../BackgroundLines";
-import dog from "../../../Assets/img/addExplanation.gif"
+import dog from "../../../Assets/img/addExplanation.gif";
+import Arrow from "../../../Assets/rightArrow.svg";
 import Container from "../container";
-import { ArrowAdd } from "../../../components/HoverArrow/Arrows"
 
 //suma
 export default function Explication() {
-    return (
-        <div className="md:py-10 md:px-20 flex items-start">
-            <StepNumber color="#FEEB70" />
-
-            <div className="grid grid-cols-2 w-full">
-                <div>
-                    <p className="py-4 font-bold text-2xl">Sumar significa agregar</p>
-                    <div className="flex items-center">
-                        <p className="py-4 pr-2">Si hay 3 perros jugando </p>
-                        <img className="h-20 w-20" src={dog} />
-                        <img className="h-20 w-20" src={dog} />
-                        <img className="h-20 w-20" src={dog} />
-                        <p className="py-4 pl-2">y llegan 2 mas </p>
-                        <img className="h-20 w-20" src={dog} />
-                        <img className="h-20 w-20" src={dog} />
+  return (
+    <Container color="#FEEB70">
+      <div className="flex items-start justify-center">
+        <div className="grid w-full">
+          <div>
+            <p className="font-bold text-2xl">Sumar significa agregar</p>
+            <div className="">
+              <p className="py-4 pr-2 text-xl">
+                Si hay 3 perros jugando y llegan 2 mas En total tendremos 5 perros
+                ( 3 + 2 = 5)
+              </p>
+              <div className="flex">
+                <div className="min-[1220px]:flex text-2xl items-center">
+                  <div className="flex">
+                    <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />
+                    <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />
+                    <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />
+                  </div>
+                  <p className="px-5">+</p>
+                  <div className="flex">
+                    <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />
+                    <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />
+                  </div>
+                  <div className="grid md:flex items-center  text-2xl">
+                    <p className="px-5">=</p>
+                    <div className="flex">
+                      <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />
+                      <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />
+                      <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />
+                      <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />
+                      <img className="h-16 w-16 md:h-20 md:w-20" src={dog} />
                     </div>
-                    <div className="flex items-center pt-10">
-                        <p>En total tendremos 5 perros </p>
-                        <img className="h-20 w-20" src={dog} />
-                        <img className="h-20 w-20" src={dog} />
-                        <img className="h-20 w-20" src={dog} />
-                        <img className="h-20 w-20" src={dog} />
-                        <img className="h-20 w-20" src={dog} />
-                    </div>
+                  </div>
                 </div>
-                <div className="flex w-full items-center text-2xl">
-                    <ArrowAdd true/>
-                    <div className="p-20 flex w-1/3">
-                        2 + 3
-                    </div>
-                    <div className="flex w-full">
-                        <table className="border border-gray-300 border-dashed">
-                            <tbody>
-                                <tr>
-                                    <td className="border border-2 border-gray-400 border-dashed px-10 py-5 text-amber-400">2</td>
-                                </tr>
-                                <tr>
-                                    <td className="border border-2 border-gray-400 border-dashed px-10 py-5 text-amber-400">3</td>
-                                </tr>
-                                <tr className="border border-t-4 border-gray-700">
-                                    <td className="border border-2 border-gray-400 border-dashed px-10 py-5 text-amber-400">5</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <h1 className="p-5">+</h1>
-                    </div>
-                </div>
+              </div>
             </div>
-
+          </div>
+          <div className="flex flex-col items-center justify-evenly text-2xl">
+            <embed
+              src={Arrow}
+              className="rotate-90 pt-[15%] md:py-10"
+            />
+            <div className="flex w-full items-center justify-center md:pl-5">
+              <table className="border border-gray-300 border-dashed">
+                <tbody>
+                  <tr>
+                    <td className="border border-2 border-gray-400 border-dashed px-7 py-4 md:px-10 md:py-5 text-amber-400">
+                      3
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="border border-2 border-gray-400 border-dashed px-7 py-4 md:px-10 md:py-5 text-amber-400">
+                      2
+                    </td>
+                  </tr>
+                  <tr className="border border-t-4 border-gray-700">
+                    <td className="border border-2 border-gray-400 border-dashed px-7 py-4 md:px-10 md:py-5 text-amber-400">
+                      5
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <h1 className="p-5">+</h1>
+            </div>
+          </div>
         </div>
-    )
+      </div>
+    </Container>
+  );
 }

@@ -1,23 +1,28 @@
-import React from 'react';
+import React from "react";
 import BackgroundLines from "../BackgroundLines";
 import StepNumber from "./stepNumber";
 
 export default function Container({ img, step, children, color }) {
-    return (
-        <div className="grid grid-cols-[75%,25%] justify-center md:px-20">
-            <div className="text-xl grid grid-cols-[5%,95%]">
-                <StepNumber number={step} color={ color }/>
-                <div>
-                    {children}
-                </div>
-            </div>
-            { img &&
-                <div className="flex flex-col h-full justify-evenly items-center relative">
-                <img className="w-9/12 md:w-9/12 " src={img} alt="imagen de bienvenida" />
-                <BackgroundLines full={true} />
-            </div>    
-            }
-            
+  return (
+    <div
+      id="container"
+      className={`grid grid-cols-1 w-screen justify-evenly md:px-20 ${img ? "md:grid-cols-[6%,74%,25%]" : "md:grid-cols-[6%,94%]"}`}
+    >
+      <div className="mb-5">
+        <StepNumber number={step} color={color} />
+      </div>
+      <div className="text-justify text-xl mix-[1440px]:text-3xl">
+        <div className={`${img ? "mt-16" : "mt-0"} px-10 md:m-0 md:p-0`}>{children}</div>
+      </div>
+      {img && (
+        <div className=" col-span-3 md:col-span-1 flex flex-col h-full w-full items-center md:items-start sticky top-0 pt-10 md:p-0">
+          <img
+            className="w-2/3 md:w-full sticky top-0"
+            src={img}
+            alt="imagen de bienvenida"
+          />
         </div>
-    )
+      )}
+    </div>
+  );
 }

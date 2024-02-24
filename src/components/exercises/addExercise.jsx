@@ -1,168 +1,153 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import numberGenerator from "../../utils/mathUtils/MathUtils";
 import OperationsSimbol from "../../Assets/OperationSimbol";
-import OperationsColor from "../../Assets/OperationsColor"
-import BackgroundLines from "../BackgroundLines";
-import HomeImg from "../../Assets/img/Home.gif"
+import OperationsColor from "../../Assets/OperationsColor";
+import RandomImage from "../../utils/imgUtils/RandomImage";
+import correctSound from "../../Assets/Audio/Correct.mp3";
+import incorrectSound from "../../Assets/Audio/Incorrect.mp3";
 
 export default function AddExercise({ operation, difficult }) {
-    const numbers = useMemo(() => numberGenerator({ operation, difficult }), [operation, difficult]);
-    const [answer, setAnswer] = useState("");
-    const [answerStatus, setAnswerStatus] = useState();
+  const [numbers, setNumbers] = useState(
+    numberGenerator({ operation, difficult }),
+  );
+  const [answer, setAnswer] = useState("");
+  const [answerStatus, setAnswerStatus] = useState("");
+  const correctSoundRef = useRef(new Audio(correctSound));
+  const incorrectSoundRef = useRef(new Audio(incorrectSound));
 
-    function handleInputChange(e) {
-        setAnswer(e.target.value);
+  const isEffectSoundEnabled =
+    JSON.parse(localStorage.getItem("isEffectSoundEnabled")) || false;
+
+  const handleInputChange = (e) => {
+    setAnswer(e.target.value);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const result = numbers[0] + numbers[1];
+
+    if (answer === result.toString()) {
+      setAnswerStatus(true);
+      if (isEffectSoundEnabled) {
+        correctSoundRef.current.play();
+      }
+    } else {
+      setAnswerStatus(false);
+      setAnswer("");
+      if (isEffectSoundEnabled) {
+        incorrectSoundRef.current.play();
+      }
     }
+  };
 
-    function onSubmit(e) {
-        e.preventDefault();
-        const result = (numbers[0] + numbers[1]);
+  const handleNextButtonClick = () => {
+    setNumbers(numberGenerator({ operation, difficult }));
+    setAnswer("");
+    setAnswerStatus("");
+  };
 
-        if (answer === result.toString()) {
-            setAnswerStatus(true);
-        } else {
-            setAnswerStatus(false);
-        }
-    }
-    return (
-        <div className="grid grid-cols-2 h-full justify-center items-center border border-4 border-gray-500">
-            <div className="h-full w-full">
-                <div className="flex justify-center w-full items-center text-5xl">
-                    <h1 className="px-1">{numbers[0]}</h1>
-                    <h1 className="px-1">{OperationsSimbol(operation)}</h1>
-                    <h1 className="px-1">{numbers[1]}</h1>
-                </div>
-                <div className="flex justify-center h-full w-full">
-                    <form onSubmit={onSubmit}>
-                        <input value={answer} onChange={handleInputChange} type="number" placeholder="Ingresar su respuesta" disabled={answerStatus} className="px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md" />
-                        <button
-                            className={`px-10 py-2 md:my-5 border border-2 border-${OperationsColor(operation)}  bg-${OperationsColor(operation)} bg-opacity-60 rounded-md`}
-                            type="submit"
-                        >
-                            Revisar respuesta
-                        </button>
-                    </form>
-                </div>
-                <div className="text-4xl flex justify-center items-center">
-                    {
-                        answerStatus === true ?
-                            <h1>¡Correcto!</h1>
-                            : answerStatus === false &&
-                            <h2>¡Incorrecto!</h2>
-                    }
-                </div>
-            </div>
-            <div className="h-full w-full">
-                <div className="flex flex-col w-1/2 justify-evenly items-center relative">
-                    <img src={HomeImg} alt="home gif" className="w-10/12 md:w-1/2" />
-                    <BackgroundLines full={true} />
-                </div>
-            </div>
+  return (
+    <div className="grid md:grid-cols-[60%,40%] w-full justify-center items-center h-full md:pb-10">
+      <div className="">
+        <div className="pb-10">
+          <div className="flex justify-center w-full text-5xl py-10 pb-14 md:p-0">
+            <h1 className="px-1">{numbers[0]}</h1>
+            <h1 className="px-1">{OperationsSimbol(operation)}</h1>
+            <h1 className="px-1">{numbers[1]}</h1>
+          </div>
+          <div className="flex justify-center h-full w-full md:pb-5">
+            <form onSubmit={onSubmit} className="flex flex-col md:flex-row gap-4">
+              <input
+                value={answer}
+                onChange={handleInputChange}
+                type="number"
+                min={0}
+                placeholder="Ingresar su respuesta"
+                disabled={answerStatus}
+                className={`px-7 py-3 md:my-5 border border-2 rounded-md focus:outline-none font-fredoka text-xl
+                ${answerStatus === true && 'border-green-400'} 
+                ${answerStatus === false && 'border-red-700'} 
+                ${answerStatus === "" && 'border-customBlack'} `}
+              />
+              {answerStatus === "" || answerStatus === false ? (
+                <button
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-yellow-medium bg-yellow bg-opacity-60 rounded-md`}
+                  type="submit"
+                >
+                  Revisar respuesta
+                </button>
+              ) : null}
+
+              {answerStatus === true ? (
+                <button
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-green-400 bg-green-400 bg-opacity-60 rounded-md`}
+                  type="button"
+                  onClick={handleNextButtonClick}
+                >
+                  Siguiente ejercicio
+                </button>
+              ) : null}
+            </form>
+          </div>
+          <div className="text-4xl flex justify-center items-center">
+            {answerStatus === true && <h1>¡Correcto!</h1>}
+            {answerStatus === false && <h2>¡Incorrecto!</h2>}
+            {answerStatus === "" && <h2></h2>}
+          </div>
         </div>
-    )
-
+      </div>
+      <div className="flex items-center justify-center h-full w-full">
+        <div className="flex flex-col w-8/12 justify-evenly items-center relative">
+          {useMemo(
+            () => (
+              <RandomImage answer={answerStatus} />
+            ),
+            [answerStatus],
+          )}
+          <svg
+            className={`opacity-50 w-full md:w-[90%] absolute top-50 left-50 -z-10`}
+            xmlns="http://www.w3.org/2000/svg"
+            data-name="Layer 1"
+            viewBox="0 0 300 300"
+          >
+            <path
+              fill="#75DDDD"
+              d="M24.2 33.67H70.53V61.07H24.2z"
+              transform="rotate(-45 47.37 47.368)"
+            ></path>
+            <path
+              fill="#75DDDD"
+              d="M232.19 241.66H278.52V269.06H232.19z"
+              transform="rotate(-45 255.362 255.356)"
+            ></path>
+            <path
+              fill="#7A28CB"
+              d="M9.58 67.17H151.14000000000001V94.57H9.58z"
+              transform="rotate(-45 80.36 80.874)"
+            ></path>
+            <path
+              fill="#7A28CB"
+              d="M148.59 206.18H290.15V233.58H148.59z"
+              transform="rotate(-45 219.37 219.884)"
+            ></path>
+            <path
+              fill="#FC60A8"
+              d="M-8.81 101.42H239.07V128.82H-8.81z"
+              transform="rotate(-45 115.13 115.132)"
+            ></path>
+            <path
+              fill="#FC60A8"
+              d="M60.93 171.17H308.81V198.57H60.93z"
+              transform="rotate(-45 184.868 184.875)"
+            ></path>
+            <path
+              fill="#FEEB70"
+              d="M-9.95 135.73H308.81V163.13H-9.95z"
+              transform="rotate(-45 149.428 149.435)"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
 }
-
-
-// import { useLoaderData } from "react-router-dom";
-// import Banner from "../components/Banner";
-// import OperationsColor from "../Assets/OperationsColor";
-// import numberGenerator from "../utils/mathUtils/MathUtils";
-// import OperationsSimbol from "../Assets/OperationSimbol";
-// import { useEffect, useMemo, useState } from "react";
-
-// export async function loader({ params }) {
-//     return (params)
-// }
-
-// function Exercise() {
-//     const params = useLoaderData();
-//     const numbers = useMemo(() => numberGenerator(params), [params.difficult]);
-//     const [answer, setAnswer] = useState("");
-//     const [remainder, setRemainder] = useState("");
-//     const [answerStatus, setAnswerStatus] = useState();
-//     const [inputStatus, setInputStatus] = useState(false);
-//     const [inputRemainder, setInputRemainder] = useState(false);
-//     const [remainderStatus, setRemainderStatus] = useState(false);
-
-//     useEffect(() => {
-//         if (params.operation === "División") {
-//             setInputRemainder(true);
-//         }
-//     }, []);
-
-//     function handleInputChange(e) {
-//         setAnswer(e.target.value);
-//     }
-
-//     function handleRemainderInput(e) {
-//         setRemainder(e.target.value);
-//     }
-
-//     const onSubmit = (e) => {
-//         e.preventDefault();
-//         const result = eval(numbers[0] + OperationsSimbol(params.operation) + numbers[1]);
-
-//         if (params.operation === "División") {
-//             const quotient = Math.floor(numbers[0] / numbers[1]);
-//             const remainderResult = numbers[0] % numbers[1];
-//             console.log( result)
-
-//             if (answer === quotient.toString() && remainder === remainderResult.toString()) {
-//                 setAnswerStatus("correct");
-//                 setInputStatus(true);
-//                 setRemainderStatus(true);
-//             } else {
-//                 setAnswerStatus("Incorrecto");
-//                 setInputStatus(false);
-//                 setRemainderStatus(false);
-//             }
-//         } else {
-//             if (answer === result.toString()) {
-//                 setAnswerStatus("correct");
-//                 setInputStatus(true);
-//             } else {
-//                 setAnswerStatus("Incorrecto");
-//                 setInputStatus(false);
-//             }
-//         }
-//     };
-
-//     return (
-//         <div>
-//             <Banner difficult={params.difficult} difficultcolor={OperationsColor(params.operation)} />
-
-//             <div className="flex justify-center w-full items-center text-5xl">
-//                 <h1 className="px-1">{numbers[0]}</h1>
-//                 <h1 className="px-1">{OperationsSimbol(params.operation)}</h1>
-//                 <h1 className="px-1">{numbers[1]}</h1>
-//             </div>
-//             <div className="flex justify-center">
-//                 <form onSubmit={onSubmit}>
-//                     <input value={answer} onChange={handleInputChange} type="number" placeholder="Ingresar su respuesta" disabled={inputStatus} className="px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md" />
-//                     {inputRemainder &&
-//                         <input value={remainder} onChange={handleRemainderInput} type="number" placeholder="Ingresar su respuesta" disabled={remainderStatus} className="px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md" />
-//                     }
-//                     <button
-//                         className={`px-10 py-2 md:my-5 border border-2 border-${OperationsColor(params.operation)}  bg-${OperationsColor(params.operation)} bg-opacity-60 rounded-md`}
-//                         type="submit"
-//                     >
-//                         Revisar respuesta
-//                     </button>
-//                 </form>
-//             </div>
-//             <div className="text-4xl flex justify-center items-center">
-//                 {
-//                     answerStatus === 'correct' ?
-//                         <h1>¡Correcto!</h1>
-//                         : answerStatus === 'Incorrecto' &&
-//                         <h2>¡Incorrecto!</h2>
-//                 }
-//             </div>
-
-//         </div>
-//     )
-// }
-
-// export default Exercise;
-
