@@ -15,17 +15,24 @@ function Exercise() {
   const params = useLoaderData();
   const operation = params.operation;
   const difficult = params.difficult;
+  var typeOperation = operation
+
+  if (operation === "Multiplicacion")
+  typeOperation = "Multiplicación"
+if (operation === "Division")
+  typeOperation = "División"
+
 
   const ExerciseComponent = () => {
-    switch (params.operation) {
+    switch (typeOperation) {
       case "Suma":
-        return <AddExercise operation={operation} difficult={difficult} />;
+        return <AddExercise operation={typeOperation} difficult={difficult} />;
       case "Resta":
-        return <SubExercise operation={operation} difficult={difficult} />;
+        return <SubExercise operation={typeOperation} difficult={difficult} />;
       case "Multiplicación":
-        return <MultExercise operation={operation} difficult={difficult} />;
+        return <MultExercise operation={typeOperation} difficult={difficult} />;
       case "División":
-        return <DivExercise operation={operation} difficult={difficult} />;
+        return <DivExercise operation={typeOperation} difficult={difficult} />;
       default:
         return null;
     }

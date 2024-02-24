@@ -67,14 +67,13 @@ export function SoundProvider({ children }) {
         toggleEffectSound,
       }}
     >
-      <div className="absolute flex flex-col w-24 md:w-36 justify-around items-center md:m-16 h-14 z-10 top-0 right-0 cursor-pointer">
+      <div className="absolute flex flex-col w-24 md:w-36 justify-around items-center md:my-14 md:mx-8 h-14 z-10 top-0 right-0 cursor-pointer">
       <div className="relative inline-flex justify-center mt-10 md:m-0">
         <div className={`${isOpen ? 'bg-slate-800' : 'bg-white'} transition-all duration-200 rounded-full border border-2 border-slate-800 bg-white p-3`}>
           <IoSettingsOutline
             onClick={() => { setIsOpen(!isOpen) }}
-            size={40}
             color={`${isOpen ? '#e6edf5' : '#000000'}`}
-            className={`${isOpen ? 'rotate-180 ' : 'rotate-0'} transition-all duration-200`}
+            className={`${isOpen ? 'rotate-180 ' : 'rotate-0'} transition-all duration-200 md:size-10 size-7 `}
           />
         </div>
         {isOpen &&
@@ -82,18 +81,18 @@ export function SoundProvider({ children }) {
             <div className="py-2" >
               <span>
               {isSoundEnabled ? (
-                <IoVolumeHighOutline size={40} color="#cbd5e1" onClick={toggleSound} />
+                <IoVolumeHighOutline className="md:size-10 size-7" color="#cbd5e1" onClick={toggleSound} />
               ):(
-                <IoVolumeMuteOutline size={40} color="#cbd5e1" onClick={toggleSound} />
+                <IoVolumeMuteOutline className="md:size-10 size-7" color="#cbd5e1" onClick={toggleSound} />
               )}
               </span>
             </div>
             <div className="py-2" >
               <span>
               {isEffectSoundEnabled ? (
-                <TbMusic size={35} color="#cbd5e1" onClick={toggleEffectSound}/>
+                <TbMusic className="md:size-10 size-7" color="#cbd5e1" onClick={toggleEffectSound}/>
               ) : (
-                <TbMusicOff size={35} color="#cbd5e1" onClick={toggleEffectSound}/>
+                <TbMusicOff className="md:size-10 size-7" color="#cbd5e1" onClick={toggleEffectSound}/>
               )}
               </span>
             </div>

@@ -85,7 +85,7 @@ export default function Pagination({ page, currentPage, setCurrentPage }) {
           8
         </Link>
         <Link
-          to="/dificultad/Division"
+          to="/dificultad/División"
           className={`mx-5 px-5 py-2 bg-gray-300`}
         >
           Ejercicios

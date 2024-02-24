@@ -29,14 +29,14 @@ function ExercisesMain() {
         <div>
           <Button
             label="Multiplicación"
-            onClick={() => onHandlerClick("Multiplicación")}
+            onClick={() => onHandlerClick("Multiplicacion")}
             color={"purple"}
           />
         </div>
         <div>
           <Button
             label="División"
-            onClick={() => onHandlerClick("División")}
+            onClick={() => onHandlerClick("Division")}
             color={"blue"}
           />
         </div>

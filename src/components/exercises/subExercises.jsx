@@ -43,18 +43,21 @@ export default function SubExercise({ operation, difficult }) {
             <h1 className="px-1">{numbers[1]}</h1>
           </div>
           <div className="flex justify-center h-full w-full md:pb-5">
-            <form onSubmit={onSubmit} className="flex flex-col md:flex-row">
+            <form onSubmit={onSubmit} className="flex flex-col md:flex-row gap-4">
               <input
                 value={answer}
                 onChange={handleInputChange}
                 type="number"
                 placeholder="Ingresar su respuesta"
                 disabled={answerStatus}
-                className="px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md"
+                className={`px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md focus:outline-none font-fredoka text-xl
+                ${answerStatus === true && 'border-green-400'} 
+                ${answerStatus === false && 'border-red-700'} 
+                ${answerStatus === "" && 'border-customBlack'} `}
               />
               {answerStatus === "" || answerStatus === false ? (
                 <button
-                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(operation)[0]} bg-${OperationsColor(operation)[0]} bg-opacity-60 rounded-md`}
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-pink-medium bg-pink bg-opacity-60 rounded-md`}
                   type="submit"
                 >
                   Revisar respuesta
@@ -88,7 +91,7 @@ export default function SubExercise({ operation, difficult }) {
             [answerStatus],
           )}
           <svg
-            className={`opacity-50 w-1/2 md:w-[90%] absolute top-50 left-50 -z-10`}
+            className={`opacity-50 w-full md:w-[90%] absolute top-50 left-50 -z-10`}
             xmlns="http://www.w3.org/2000/svg"
             data-name="Layer 1"
             viewBox="0 0 300 300"

@@ -1,4 +1,4 @@
-import CompletedImg from "../../../Assets/img/div.gif";
+import CompletedImg from "../../../Assets/img/mul.gif";
 import BackgroundLines from "../../BackgroundLines";
 
 //suma

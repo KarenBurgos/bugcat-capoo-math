@@ -48,10 +48,7 @@ export default function DivExercise({ operation, difficult }) {
     setRemainder("");
     setRemainderStatus("");
   };
-  console.log(remainderStatus);
-
-  console.log(quotientStatus);
-
+  console.log(operation);
   return (
     <div className="grid md:grid-cols-[60%,40%] w-full justify-center items-center h-full md:pb-10">
       <div className="">
@@ -69,7 +66,10 @@ export default function DivExercise({ operation, difficult }) {
                 type="number"
                 placeholder="Ingresar el cociente"
                 disabled={quotientStatus}
-                className="px-10 py-2 mb-6 md:my-5 border border-2 border-customBlack rounded-md"
+                className={`px-10 py-2 mb-6 md:my-5 border border-2 border-customBlack rounded-md focus:outline-none font-fredoka text-xl
+                ${quotientStatus === true && 'border-green-400'} 
+                ${quotientStatus === false && 'border-red-700'} 
+                ${quotientStatus === "" && 'border-customBlack'} `}
               />
               <input
                 value={remainder}
@@ -77,14 +77,17 @@ export default function DivExercise({ operation, difficult }) {
                 type="number"
                 placeholder="Ingresar el residuo"
                 disabled={remainderStatus}
-                className="px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md"
+                className={`px-10 py-2 md:my-5 border border-2 border-customBlack rounded-md focus:outline-none font-fredoka text-xl
+                ${remainderStatus === true && 'border-green-400'} 
+                ${remainderStatus === false && 'border-red-700'} 
+                ${remainderStatus === "" && 'border-customBlack'} `}
               />
 
               {quotientStatus === "" ||
               quotientStatus === false ||
               remainderStatus === false ? (
                 <button
-                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-${OperationsColor(operation)[0]} bg-${OperationsColor(operation)[0]} bg-opacity-60 rounded-md`}
+                  className={`px-10 py-2 mt-5 md:my-5 border border-2 border-blue-medium bg-blue bg-opacity-60 rounded-md`}
                   type="submit"
                 >
                   Revisar respuesta
@@ -120,7 +123,7 @@ export default function DivExercise({ operation, difficult }) {
             [quotientStatus, remainderStatus],
           )}
           <svg
-            className={`opacity-50 w-1/2 md:w-[90%] absolute top-50 left-50 -z-10`}
+            className={`opacity-50 w-full md:w-[90%] absolute top-50 left-50 -z-10`}
             xmlns="http://www.w3.org/2000/svg"
             data-name="Layer 1"
             viewBox="0 0 300 300"

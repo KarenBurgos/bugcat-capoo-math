@@ -1,5 +1,5 @@
 import Container from "../container";
-import multiplicationImg from "../../../Assets/img/div.png";
+import multiplicationImg from "../../../Assets/img/mul.png";
 
 export default function step1() {
   return (

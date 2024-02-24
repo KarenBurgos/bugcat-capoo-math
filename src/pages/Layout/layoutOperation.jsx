@@ -10,12 +10,21 @@ export async function loader({ params }) {
 function LayoutOperation() {
   const operation = useLoaderData();
   const location = useLocation();
+  var operationText = operation
+
+  console.log(location.path)
+  console.log(operation)
+  console.log(operationText)
+  if (operation === "Multiplicacion")
+    operationText = "Multiplicación"
+  if (operation === "Division")
+    operationText = "División"
 
   return (
     <div className="grid grid-rows-[20vh,80vh] md:grid-rows-[25vh,75vh] md:items-center">
       <div>
         <Title
-          text={operation}
+          text={operationText}
           color={OperationsColor(operation)[0]}
           backButton={true}
         >

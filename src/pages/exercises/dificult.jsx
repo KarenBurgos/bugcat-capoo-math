@@ -13,8 +13,6 @@ function Difficult() {
   const operation = useLoaderData();
   const navigate = useNavigate();
 
-  console.log(OperationsColor(operation)[1]);
-
   function onHandlerClick(dificultad) {
     console.log(`/dificultad/${operation}/${dificultad}/ejercicios`);
     navigate(`/dificultad/${operation}/${dificultad}/ejercicios`);

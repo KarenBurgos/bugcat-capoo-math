@@ -21,10 +21,6 @@ function Button({ label, onClick, isSoundEnabled, operation, color }) {
     }
   };
 
-  const onOut = () => {
-    hoverAudioRef.current.pause();
-    hoverAudioRef.current.currentTime = 0;
-  };
 
   const onLeave = () => {
     setIsHovered(false);
@@ -68,12 +64,13 @@ function Button({ label, onClick, isSoundEnabled, operation, color }) {
         onMouseOver={onHover}
         onMouseLeave={onLeave}
         onMouseEnter={onEnter}
-        onMouseOut={onOut}
       >
-        <ArrowAdd visibility={getVisibility("Suma")} />
-        <ArrowSub visibility={getVisibility("Resta")} />
-        <ArrowMult visibility={getVisibility("Multiplicación")} />
-        <ArrowDiv visibility={getVisibility("División")} />
+        <div className="md:inline hidden">
+          <ArrowAdd visibility={getVisibility("Suma")} />
+          <ArrowSub visibility={getVisibility("Resta")} />
+          <ArrowMult visibility={getVisibility("Multiplicación")} />
+          <ArrowDiv visibility={getVisibility("División")} />
+        </div>
         <button
           className="relative overflow-hidden w-full md:w-1/2 h-20 px-10 py-2 border border-2 border-customBlack rounded-md group"
           onClick={handleClick}

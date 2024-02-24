@@ -1,4 +1,4 @@
-import multiplicationImg from "../../../Assets/img/div.png";
+import multiplicationImg from "../../../Assets/img/mul.png";
 import Arrow from "../../../Assets/rightArrow.svg";
 import UpArrow from "../../../Assets/upArrow.svg";
 import Container from "../container";

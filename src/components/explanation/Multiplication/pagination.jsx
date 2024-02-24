@@ -79,7 +79,7 @@ export default function Pagination({ page, currentPage, setCurrentPage }) {
           7
         </Link>
         <Link
-          to="/dificultad/Multiplicación"
+          to="/dificultad/Multiplicacion"
           className="mx-5 px-5 py-2 bg-gray-300"
         >
           Ejercicios
