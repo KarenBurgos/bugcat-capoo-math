@@ -1,6 +1,5 @@
 import multiplicationImg from "../../../Assets/img/mul.png";
 import Arrow from "../../../Assets/rightArrow.svg";
-import UpArrow from "../../../Assets/upArrow.svg";
 import Container from "../container";
 
 export default function step2() {
@@ -46,7 +45,7 @@ export default function step2() {
                 </tr>
               </tbody>
             </table>
-            <embed src={UpArrow} className="h-12 absolute top-14 right-16" />
+            <embed src={Arrow} className="h-12 absolute top-14 right-16 rotate-90" />
             <div className="flex items-start">
               <h1 className="text-start p-5">x</h1>
             </div>
@@ -98,8 +97,8 @@ export default function step2() {
                     </tbody>
                   </table>
                   <embed
-                    src={UpArrow}
-                    className="h-12 absolute top-24 right-4"
+                    src={Arrow}
+                    className="h-10 absolute top-24 right-4 rotate-90"
                   />
                 </div>
               </div>

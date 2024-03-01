@@ -26,8 +26,6 @@ function Learn() {
     ),
     [operation],
   )}
-  console.log(page)
-  console.log(currentPage)
 
   const OperationComponent = () => {
     return (

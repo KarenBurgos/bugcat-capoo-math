@@ -59,8 +59,6 @@ const RandomImage = ({ answer }) => {
   } else if (answer === false) {
     imageToShow = getRandomImage(falseImages);
   }
-  console.log(answer);
-
   return (
     <img src={imageToShow} alt="Random Image" className="w-10/12 md:w-[80%]" />
   );

@@ -48,7 +48,7 @@ export default function DivExercise({ operation, difficult }) {
     setRemainder("");
     setRemainderStatus("");
   };
-  console.log(operation);
+  
   return (
     <div className="grid md:grid-cols-[60%,40%] w-full justify-center items-center h-full md:pb-10">
       <div className="">

@@ -11,10 +11,7 @@ function LayoutOperation() {
   const operation = useLoaderData();
   const location = useLocation();
   var operationText = operation
-
-  console.log(location.path)
-  console.log(operation)
-  console.log(operationText)
+  
   if (operation === "Multiplicacion")
     operationText = "Multiplicación"
   if (operation === "Division")

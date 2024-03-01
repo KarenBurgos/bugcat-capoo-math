@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 import LayoutOperation, {
   loader as loaderLayout,
 } from "./pages/Layout/layoutOperation";
@@ -20,6 +19,7 @@ import Learn from "./pages/learn/learn";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { SoundProvider } from "./components/Sound";
+import Error from "./pages/error"
 
 const router = createBrowserRouter([
   {
@@ -65,6 +65,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "*",
+    element: <Error />
+  }
 ]);
 
 ReactDOM.render(
