@@ -1,7 +1,6 @@
 import SubTitle from "./SubTitle";
 
 export default function Banner({ difficult, difficultcolor }) {
-  console.log(`bg-${difficultcolor}`);
 
   return (
     <div

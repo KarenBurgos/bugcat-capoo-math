@@ -14,7 +14,6 @@ function Difficult() {
   const navigate = useNavigate();
 
   function onHandlerClick(dificultad) {
-    console.log(`/dificultad/${operation}/${dificultad}/ejercicios`);
     navigate(`/dificultad/${operation}/${dificultad}/ejercicios`);
   }
 

@@ -1,7 +1,6 @@
 import Container from "../container";
 import multiplicationImg from "../../../Assets/img/mul.png";
 import Arrow from "../../../Assets/rightArrow.svg";
-import diagonalArrow from "../../../Assets/diagonalLeftArrow.svg";
 
 export default function step3() {
   return (
@@ -47,7 +46,7 @@ export default function step3() {
               </table>
               <div>
                 <embed
-                  src={diagonalArrow}
+                  src={Arrow}
                   className="h-14 absolute top-14 left-20"
                 />
               </div>

@@ -1,4 +1,3 @@
-import StepNumber from "../stepNumber";
 import Container from "../container";
 import Arrow from "../../../Assets/rightArrow.svg";
 import explanation1 from "../../../Assets/img/candies-green.png";

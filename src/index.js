@@ -19,6 +19,7 @@ import Learn from "./pages/learn/learn";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { SoundProvider } from "./components/Sound";
+import Error from "./pages/error"
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "*",
+    element: <Error />
+  }
 ]);
 
 ReactDOM.render(
