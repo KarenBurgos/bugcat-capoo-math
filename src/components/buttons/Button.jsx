@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ArrowAdd, ArrowSub, ArrowMult, ArrowDiv } from "../hoverArrow/Arrows";
+import { ArrowAdd, ArrowSub, ArrowMult, ArrowDiv } from "../HoverArrow/Arrows";
 import hoverSound from "../../Assets/Audio/hoverSound.mp3";
 import clickSound from "../../Assets/Audio/Click.mp3";
 
